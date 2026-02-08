@@ -1,0 +1,1091 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StoxGear – Manage Funds</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ---------- THEME VARIABLES (White & Gold) ---------- */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f7f8fb;
+  --text: #0f1220;
+  --text-dim: #5e6676;
+  --muted:#5e6676;
+  --lime: #c9a646;          /* gold */
+  --lime-soft: #dab867;     /* lighter gold */
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+  --line: #e7e9ee;
+
+  /* for navbar/footer */
+  --accent:#c9a646;
+  --accent-2:#b38b2e;
+}
+
+/* subtle page background accents */
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 420px at 8% -10%, rgba(201,166,70,.10), transparent 60%),
+    radial-gradient(900px 360px at 92% 110%, rgba(201,166,70,.08), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Poppins", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- NAVBAR (White & Gold) ---------- */
+
+/* NAVBAR BASE */
+.nx-navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.nx-navbar.scrolled{
+  box-shadow:0 10px 28px rgba(0,0,0,.12);
+}
+
+/* NAVBAR INNER */
+.nx-nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.nx-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--text);
+}
+.nx-logo{
+  height:38px;
+  width:auto;
+}
+.nx-logo2{
+  height:38px;
+  width:auto;
+  margin-left:10px;
+}
+
+.nx-grow{flex:1}
+
+/* CTA BUTTON */
+.nx-cta{
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  border:none;
+  padding:10px 22px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:.25s;
+}
+.nx-cta:hover{
+  filter:brightness(1.1);
+}
+
+/* HAMBURGER */
+.nx-toggle{
+  display:none;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* NAV MENU */
+.nx-menu{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.nx-item{
+  position:relative;
+}
+.nx-link{
+  color:var(--text-dim);
+  font-weight:600;
+  position:relative;
+}
+.nx-link:hover{
+  color:var(--accent);
+}
+.nx-link:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.25s;
+}
+.nx-link:hover:after{
+  width:100%;
+}
+
+/* DROPDOWN */
+.nx-drop{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:0;
+  min-width:230px;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:10px;
+  border-radius:var(--radius);
+  display:none;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+.nx-drop a{
+  display:block;
+  padding:8px 10px;
+  color:var(--text);
+  border-radius:10px;
+}
+.nx-drop a:hover{
+  background:#f6f6f6;
+  color:var(--accent);
+}
+
+/* Desktop hover */
+@media (min-width:1025px){
+  .nx-item:hover>.nx-drop{
+    display:block;
+  }
+}
+
+/* Mobile logic */
+@media (max-width:1024px){
+
+  .nx-toggle{
+    display:block;
+  }
+
+  .nx-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:#fff;
+    border-top:1px solid var(--line);
+    flex-direction:column;
+    box-shadow:0 12px 26px rgba(0,0,0,.08);
+    padding:10px 12px;
+  }
+
+  .nx-item{ width:100%; }
+  .nx-link{ display:block; padding:12px 6px; }
+
+  .nx-drop{
+    position:static;
+    border:none;
+    box-shadow:none;
+    background:none;
+    padding:0;
+    display:none;
+  }
+
+  .nx-item.open>.nx-drop{
+    display:block;
+  }
+}
+
+/* ---------- PAGE HEADER ---------- */
+header.page-hero {
+  text-align: center;
+  margin: 40px auto 30px;
+  padding: 0 20px;
+}
+header.page-hero h1 {
+  font-size: clamp(32px, 4vw, 56px);
+  color: var(--lime);
+  margin: 0 0 8px;
+  text-shadow: 0 0 12px rgba(201,166,70,.18);
+}
+header.page-hero p {
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+h2 {
+  color: var(--lime);
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* ---------- GRID / CARDS ---------- */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color .25s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  border-color: rgba(201,166,70,.55);
+}
+.card .icon {
+  font-size: 28px;
+  background: var(--lime);
+  color: #000;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.card p { color: var(--text-dim); }
+
+/* ---------- TABLES (light) ---------- */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(201, 166, 70, 0.06) inset, var(--shadow);
+  margin-top: 25px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 16px;
+  color: var(--text);
+  min-width: 980px;
+}
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e6e8ef;
+  border-right: 1px solid #edf0f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+th:last-child, td:last-child { border-right: 0; }
+thead th {
+  position: sticky;
+  top: 0;
+  background: #fafbfe;
+  color: #4a5161;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-bottom: 2px solid var(--lime);
+}
+tbody tr:nth-child(odd) { background: #ffffff; }
+tbody tr:nth-child(even) { background: #fbfcff; }
+tbody tr:hover { background: rgba(201,166,70,.10); }
+
+/* copy affordance */
+[data-copy] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  cursor: pointer;
+  position: relative;
+}
+[data-copy]::after {
+  content: "Copy";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  background: rgba(201,166,70,.14);
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: var(--text-dim);
+  opacity: 0;
+  transition: 0.2s ease;
+}
+[data-copy]:hover::after { opacity: 0.85; }
+[data-copy].copied::after {
+  content: "Copied!";
+  background: var(--lime);
+  color: #000;
+  opacity: 1;
+  font-weight: 700;
+}
+
+/* ---------- MOBILE TABLE STACK ---------- */
+@media (max-width: 800px) {
+  table { min-width: 0; font-size: 15px; }
+  thead { display: none; }
+  table, tbody, tr, td {
+    display: block;
+    width: 100%;
+  }
+  tbody tr {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin: 10px 0;
+    padding: 10px 12px;
+  }
+  td {
+    border: none;
+    padding: 10px 0;
+    white-space: normal;
+  }
+  td::before {
+    content: attr(data-col);
+    display: block;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+}
+
+/* ---------- FOOTER (light) ---------- */
+.nx-footer{
+  margin-top:40px;
+  background:#fafafa;
+  border-top:1px solid var(--line);
+  color:var(--text-dim);
+}
+
+.nx-foot-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:48px 20px 30px;
+}
+
+/* TOP ROW */
+.nx-foot-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+}
+
+.nx-foot-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--text);
+}
+
+.nx-foot-logo{
+  height:38px;
+  width:auto;
+}
+
+/* GRID */
+.nx-foot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+  padding:26px 0 10px;
+}
+
+@media(max-width:900px){
+  .nx-foot-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:540px){
+  .nx-foot-grid{ grid-template-columns:1fr; }
+}
+
+.nx-foot-col h4{
+  font-size:15px;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.nx-foot-col a{
+  color:var(--text);
+  padding:6px 0;
+  font-size:14px;
+  display:block;
+  opacity:.9;
+  transition:.2s ease;
+}
+.nx-foot-col a:hover{
+  opacity:1;
+  transform:translateX(2px);
+}
+
+/* BOTTOM ROW */
+.nx-foot-bottom{
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  color:var(--text-dim);
+}
+/* ==============================
+   SLOW DROPDOWN (0.89s)
+============================== */
+
+.nx-drop{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.89s cubic-bezier(.4,0,.2,1),
+    transform 0.89s cubic-bezier(.4,0,.2,1),
+    visibility 0.89s;
+
+  pointer-events: none;
+}
+
+/* DESKTOP (HOVER) */
+@media (min-width: 1025px){
+  .nx-item:hover > .nx-drop{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* MOBILE (CLICK) */
+@media (max-width: 1024px){
+  .nx-drop{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+
+    transition:
+      max-height 0.89s ease,
+      opacity 0.89s ease,
+      transform 0.89s ease;
+  }
+
+  .nx-item.open > .nx-drop{
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   CARD ANIMATION (ONLY IF EXISTS)
+============================== */
+
+.card,
+.doc-card{
+  opacity: 0;
+  transform: translateY(25px) scale(.97);
+  animation: cardFadeUp 0.7s ease forwards;
+}
+
+@keyframes cardFadeUp{
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* MOBILE CARD FIX */
+@media (max-width: 600px){
+  .card,
+  .doc-card{
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ===== DROPDOWN ANIMATION (0.89s) ===== */
+.nx-drop{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.89s cubic-bezier(.4,0,.2,1),
+    transform 0.89s cubic-bezier(.4,0,.2,1),
+    visibility 0.89s;
+
+  pointer-events: none;
+}
+
+/* DESKTOP HOVER */
+@media (min-width:1025px){
+  .nx-item:hover > .nx-drop{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* MOBILE CLICK */
+@media (max-width:1024px){
+  .nx-drop{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+
+    transition:
+      max-height 0.89s ease,
+      opacity 0.89s ease,
+      transform 0.89s ease;
+  }
+
+  .nx-item.open > .nx-drop{
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARD ANIMATION (ONLY IF EXISTS) ===== */
+.card,
+.doc-card{
+  opacity: 0;
+  transform: translateY(25px) scale(.97);
+  animation: cardFadeUp 0.7s ease forwards;
+}
+
+@keyframes cardFadeUp{
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* MOBILE CARD FIX */
+@media (max-width:600px){
+  .card,
+  .doc-card{
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ===== Dropdown ===== */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+  transition: opacity 4s ease, transform 4s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 1000;
+}
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Cards ===== */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+    .dropdown button {
+        width: 100%;
+    }
+    .dropdown-content {
+        min-width: 100%;
+    }
+}
+/* ===== Dropdown ===== */
+.dropdown-content {
+    display: none;          /* Hidden by default */
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+    opacity: 0;             /* Start invisible */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: opacity 0.89s ease, transform 0.89s ease; /* Smooth open 0.89s */
+    z-index: 1000;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;            /* Fade in */
+    transform: translateY(0); /* Slide down */
+}
+
+/* Optional: Hover effect for links */
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.3s;
+}
+.dropdown-content a:hover {
+    background: #f0f0f0;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+    .dropdown button {
+        width: 100%;
+    }
+    .dropdown-content {
+        min-width: 100%;
+    }
+}
+/* ===== SLOW DROPDOWN (4s) ===== */
+.nx-drop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity 4s cubic-bezier(.4,0,.2,1),
+    transform 4s cubic-bezier(.4,0,.2,1),
+    visibility 4s;
+  pointer-events: none;
+}
+
+/* Desktop hover */
+@media (min-width: 1025px) {
+  .nx-item:hover > .nx-drop {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* Mobile click */
+@media (max-width: 1024px) {
+  .nx-drop {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      max-height 4s ease,
+      opacity 4s ease,
+      transform 4s ease;
+  }
+
+  .nx-item.open > .nx-drop {
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARD ANIMATION (ONLY IF EXISTS) ===== */
+.card, .doc-card {
+  opacity: 0;
+  transform: translateY(25px) scale(.97);
+  animation: cardFadeUp 0.7s ease forwards;
+}
+
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile card fix */
+@media (max-width: 600px) {
+  .card, .doc-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+</style>
+<link href="assets/stoxgear-pro.css" rel="stylesheet"/>  <link rel="stylesheet" href="assets/stoxgear-cinema.css">
+</head>
+<body data-page="dmanage fudnds.html">
+<!-- ===== NAVBAR ===== -->
+<header class="nx-navbar" id="nxHeader">
+<div class="nx-nav-inner">
+<!-- BRAND / LOGO -->
+<a class="nx-brand" href="index.html">
+<img alt="Stoxgear" class="nx-logo" src="stoxgear-logo.jpg"/>
+<img alt="Partner" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
+</a>
+<div class="nx-grow"></div>
+<nav class="nx-menu" id="nxMenu">
+<!-- WHY US -->
+<div class="nx-item">
+<a class="nx-link" href="#">Why Us</a>
+<div class="nx-drop">
+<a href="about.html">About Us</a>
+<a href="BOARD of directors.html">Board / Management</a>
+<a href="Mission.html">Mission &amp; Vision</a>
+<a href="associated companies.html">Associated Companies</a>
+<a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
+<a href="services.html">Services</a>
+<a href="Registered agents..html">Registered Agents</a>
+</div>
+</div>
+<!-- EDUCATION -->
+<div class="nx-item">
+<a class="nx-link" href="#">Education</a>
+<div class="nx-drop">
+<a href="New to trading.html">New to Trading</a>
+<a href="Investorguid.html">Investor Guide</a>
+<a href="Glossary.html">Glossary</a>
+<a href="psx-rule-book.html">PSX Rule Book</a>
+<a href="common-terms-share-market.html">Common Terms of Share Market</a>
+<a href="online-order-execution-flow.html">Order Execution Flow</a>
+<a href="order-settlement-flow.html">Order Settlement Flow</a>
+<a href="arbitration-procedure.html">Arbitration Procedure</a>
+<a href="risk-disclosure-document.html">Risk Disclosure Document</a>
+<a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
+<a href="faqs.html">FAQs</a>
+</div>
+</div>
+<!-- OPEN ACCOUNT -->
+<div class="nx-item">
+<a class="nx-link" href="#">Open Account</a>
+<div class="nx-drop">
+<a href="Rda.html">Roshan Digital Account</a>
+<a href="Acoocint opening.html">Open Digital Account</a>
+<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+</div>
+</div>
+<!-- DOWNLOADS -->
+<div class="nx-item">
+<a class="nx-link" href="#">Downloads</a>
+<div class="nx-drop">
+<a href="Forms.html">Forms</a>
+<a href="software.html">Software</a>
+<a href="Annaual half yearly.html">Financial Statements</a>
+<a href="KYC poslicy.html">CDD / KYC Policy</a>
+</div>
+</div>
+<!-- SUPPORT -->
+<div class="nx-item">
+<a class="nx-link" href="#">Support</a>
+<div class="nx-drop">
+<a href="investor complaint.html">Investor Complaint</a>
+<a href="Pending investor complaun.html">Pending Complaints</a>
+<a href="Penal action.html">Penal Action</a>
+<a href="Secp complaint.html">SECP Complaint</a>
+<a href="psx complaint.html">PSX Complaint</a>
+<a href="UIs of NICCPL.html">UIS Services</a>
+<a href="Eservices By CDC.html">EServices by CDC</a>
+</div>
+</div>
+<!-- CONTACT (NO DROPDOWN) -->
+<div class="nx-item">
+<a class="nx-link" href="Contact.html">Contact</a>
+</div>
+</nav>
+<button class="nx-cta">OPEN AN ACCOUNT</button>
+<button class="nx-toggle" id="nxToggle">☰</button>
+</div>
+</header>
+<!-- ===== PAGE HERO ===== -->
+<header class="page-hero">
+<h1>Manage Funds</h1>
+<p>
+    Deposit funds to your StoxGear trading account through online transfer or cheque deposit,
+    and share proof via email for swift processing.
+  </p>
+</header>
+<!-- ===== FUND DEPOSIT ===== -->
+<section>
+<h2>Fund Deposit</h2>
+<div class="grid">
+<div class="card">
+<div class="icon">💸</div>
+<h3>Online Transfer</h3>
+<p>Transfer funds online and email screenshot to <a href="mailto:info@StoxGear.com">info@StoxGear.com</a>.</p>
+</div>
+<div class="card">
+<div class="icon">🏦</div>
+<h3>Deposit via Cheque</h3>
+<p>Deposit funds and email cheque &amp; slip copy to <a href="mailto:info@StoxGear.com">info@StoxGear.com</a>.</p>
+</div>
+<div class="card">
+<div class="icon">🧾</div>
+<h3>File Requirements</h3>
+<p>Uploads must be under <strong>400KB</strong> in JPEG or PNG format.</p>
+</div>
+</div>
+<!-- BANK TABLE -->
+<div class="table-wrap">
+<table class="mf-table" id="bank-table">
+<thead>
+<tr>
+<th>S. No.</th>
+<th>Bank Name</th>
+<th>Account Number</th>
+<th>IBAN</th>
+<th>SWIFT Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-col="S. No.">1</td>
+<td data-col="Bank Name">Bank Al Habib</td>
+<td data-col="Account Number" data-copy="">1012-0081-007510-01-5</td>
+<td data-col="IBAN" data-copy="">PK45BAHL1012008100751001</td>
+<td data-col="SWIFT Code">BAHLPKKA</td>
+</tr>
+<tr>
+<td data-col="S. No.">2</td>
+<td data-col="Bank Name">MCB Bank Limited</td>
+<td data-col="Account Number" data-copy="">1337416781002852</td>
+<td data-col="IBAN" data-copy="">PK12MUCB1337416781002852</td>
+<td data-col="SWIFT Code">MUCBPKKA</td>
+</tr>
+<tr>
+<td data-col="S. No.">3</td>
+<td data-col="Bank Name">Meezan Bank</td>
+<td data-col="Account Number" data-copy="">0105501341</td>
+<td data-col="IBAN" data-copy="">PK27MEZN00990901055501341</td>
+<td data-col="SWIFT Code">MEZNPKKA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer class="nx-footer">
+<div class="nx-foot-wrap">
+<!-- TOP BRAND -->
+<div class="nx-foot-top">
+<a class="nx-foot-brand" href="index.html">
+<img alt="" class="nx-foot-logo" src="stoxgear-logo.jpg"/>
+<img alt="" class="nx-foot-logo" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
+</a>
+</div>
+<!-- GRID -->
+<div class="nx-foot-grid">
+<div class="nx-foot-col">
+<h4>WHY US</h4>
+<a href="about.html">About Us</a>
+<a href="BOARD of directors.html">Board / Management</a>
+<a href="Mission.html">Mission &amp; Vision</a>
+</div>
+<div class="nx-foot-col">
+<h4>EDUCATION</h4>
+<a href="New to trading.html">New to Trading</a>
+<a href="Investorguid.html">Investor Guide</a>
+<a href="Glossary.html">Glossary</a>
+</div>
+<div class="nx-foot-col">
+<h4>ACCOUNT</h4>
+<a href="Rda.html">Roshan Digital Account</a>
+<a href="Acoocint opening.html">Open Digital Account</a>
+<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+</div>
+<div class="nx-foot-col">
+<h4>CONTACT</h4>
+<a href="mailto:info@stoxgear.com.pk">info@stoxgear.com.pk</a>
+<a href="tel:0913168395">091-3168395</a>
+<a href="#">Karachi, Pakistan</a>
+</div>
+</div>
+<!-- BOTTOM -->
+<div class="nx-foot-bottom">
+<span>© <script>document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) Limited</span>
+<span>
+<a href="privacy.html">Privacy</a> ·
+        <a href="terms.html">Terms</a>
+</span>
+</div>
+</div>
+</footer>
+<script>
+/* ===== Mobile navbar toggle ===== */
+(function(){
+  const toggle = document.getElementById('nxToggle');
+  const menu   = document.getElementById('nxMenu');
+
+  function closeMenu(){
+    if(!menu) return;
+    menu.style.display = 'none';
+    toggle?.setAttribute('aria-expanded','false');
+    document.querySelectorAll('.nx-item.open').forEach(n => n.classList.remove('open'));
+  }
+
+  toggle?.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(!menu) return;
+    const open = getComputedStyle(menu).display !== 'block';
+    menu.style.display = open ? 'block' : 'none';
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  document.querySelectorAll('.nx-item > .nx-link').forEach(link=>{
+    link.addEventListener('click', (e)=>{
+      const isMobile = window.matchMedia('(max-width:1024px)').matches;
+      const drop = link.nextElementSibling;
+      if(isMobile && drop && drop.classList.contains('nx-drop')){
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e)=>{
+    const isMobile = window.matchMedia('(max-width:1024px)').matches;
+    const nav = document.querySelector('.nx-navbar');
+    if(isMobile && nav && !nav.contains(e.target)){
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 1024 && menu){
+      menu.style.display = '';
+    }
+  });
+})();
+
+/* ===== Copy-to-clipboard for cells with [data-copy] ===== */
+(function(){
+  const cells = document.querySelectorAll('[data-copy]');
+  if(!cells.length) return;
+
+  async function copyText(txt){
+    try {
+      await navigator.clipboard.writeText(txt);
+      return true;
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = txt;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  }
+
+  function setCopied(el){
+    el.classList.add('copied');
+    setTimeout(()=>el.classList.remove('copied'), 1200);
+  }
+
+  cells.forEach(td=>{
+    td.setAttribute('tabindex','0');
+    td.setAttribute('aria-label','Copy to clipboard');
+
+    const handle = async ()=>{
+      const txt = td.textContent.trim();
+      const ok = await copyText(txt);
+      if(ok) setCopied(td);
+    };
+
+    td.addEventListener('click', handle);
+    td.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        handle();
+      }
+    });
+  });
+})();
+// ===== Dropdown =====
+document.querySelectorAll('.dropdown button').forEach(btn => {
+    const content = btn.nextElementSibling;
+    btn.addEventListener('click', () => {
+        if(content) content.classList.toggle('show');
+    });
+});
+
+// Close dropdown if clicked outside
+window.addEventListener('click', e => {
+    document.querySelectorAll('.dropdown-content').forEach(drop => {
+        if(!drop.contains(e.target) && !drop.previousElementSibling.contains(e.target)){
+            drop.classList.remove('show');
+        }
+    });
+});
+
+// ===== Card Animation =====
+function animateCards() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, i) => {
+        setTimeout(() => card.classList.add('show'), i*150);
+    });
+}
+document.addEventListener('DOMContentLoaded', animateCards);
+
+// ===== Mobile Detection =====
+function isMobile() {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+}
+</script>
+
+/* ===== Mobile dropdown toggle ===== */
+document.querySelectorAll('.nx-item &gt; .nx-link').forEach(link =&gt; {
+  link.addEventListener('click', e =&gt; {
+    const isMobile = window.matchMedia('(max-width:1024px)').matches;
+    const drop = link.nextElementSibling;
+    if (isMobile &amp;&amp; drop &amp;&amp; drop.classList.contains('nx-drop')) {
+      e.preventDefault();
+      link.parentElement.classList.toggle('open');
+    }
+  });
+});
+
+/* ===== Card Animation (staggered) ===== */
+function animateCards() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, i) =&gt; {
+    setTimeout(() =&gt; card.classList.add('show'), i * 150);
+  });
+}
+document.addEventListener('DOMContentLoaded', animateCards);
+  <script defer src="assets/stoxgear-cinema.js"></script>
+</body>
+</html>

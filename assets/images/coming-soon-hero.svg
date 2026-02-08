@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fff4dd"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9a646"/>
+      <stop offset="1" stop-color="#b38b2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="28" fill="url(#g)"/>
+  <rect x="28" y="28" width="844" height="464" rx="24" fill="#ffffff" stroke="#e7e9ee"/>
+  <text x="70" y="140" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="900" fill="#141414">Coming Soon</text>
+  <text x="70" y="195" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#5e6676">Replace this illustration with your final artwork.</text>
+  <rect x="70" y="240" width="520" height="12" rx="6" fill="rgba(201,166,70,.18)"/>
+  <rect x="70" y="265" width="460" height="12" rx="6" fill="rgba(201,166,70,.14)"/>
+  <rect x="70" y="290" width="390" height="12" rx="6" fill="rgba(201,166,70,.10)"/>
+  <circle cx="790" cy="280" r="78" fill="rgba(201,166,70,.10)" stroke="url(#gold)" stroke-width="4"/>
+  <path d="M755 280h70M790 245v70" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+</svg>

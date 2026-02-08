@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>StoxGear — Investor Guide</title>
+<style>
+  <style>
+  <style>
+  :root{
+    /* — White, Gold & Subtle Grey — */
+    --bg:#f8f9fa;        /* light grey background */
+    --card:#ffffff;      /* pure white cards */
+    --text:#1f2937;      /* dark slate text */
+    --text-2:#6b7280;    /* soft grey secondary text */
+    --accent:#caa03d;    /* gold accent */
+    --accent-2:#e7c86c;  /* lighter gold accent */
+    --gold-t:rgba(202,160,61,.12);
+    --line:rgba(0,0,0,.08);
+    --radius:18px;
+    --shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font:16px/1.6 "Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1100px 420px at 8% -10%, rgba(202,160,61,.05), transparent 60%),
+      radial-gradient(900px 360px at 92% 110%, rgba(202,160,61,.04), transparent 60%),
+      var(--bg);
+  }
+
+  /* ================= NAVBAR ================= */
+  .nx-navbar{
+    position:sticky;top:0;z-index:999;
+    backdrop-filter:saturate(140%) blur(10px);
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--line);
+  }
+  .nx-nav-inner{max-width:1200px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:18px;}
+  .nx-brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text)}
+  .nx-logo{height:36px;width:auto}
+  .nx-tag{font-size:13px;color:var(--text-2)}
+  .nx-grow{flex:1}
+  .nx-menu{display:flex;align-items:center;gap:28px}
+  .nx-item{position:relative}
+  .nx-link{color:var(--text-2);text-decoration:none;font-weight:600;transition:.2s}
+  .nx-link:hover{color:var(--accent)}
+  .nx-link::after{
+    content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;
+    background:linear-gradient(90deg,var(--accent),transparent);
+    transform:scaleX(0);transform-origin:left;transition:transform .25s;
+  }
+  .nx-link:hover::after{transform:scaleX(1)}
+  .nx-drop{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:240px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;
+    box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(6px);transition:.25s;
+  }
+  .nx-item:hover .nx-drop{opacity:1;pointer-events:auto;transform:none}
+  .nx-drop a{display:block;padding:8px 12px;color:var(--text);text-decoration:none;border-radius:10px}
+  .nx-drop a:hover{background:var(--gold-t);color:var(--accent)}
+  .nx-cta{
+    border:none;padding:10px 18px;border-radius:999px;font-weight:700;cursor:pointer;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111;transition:.2s;
+    box-shadow:0 8px 18px rgba(202,160,61,.25);
+  }
+  .nx-cta:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(202,160,61,.35)}
+  .nx-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text)}
+  @media(max-width:980px){
+    .nx-toggle{display:inline-grid;place-items:center}
+    .nx-menu{
+      position:fixed;inset:70px 16px auto 16px;flex-direction:column;gap:12px;padding:14px;
+      background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+      transform:translateY(-10px);opacity:0;pointer-events:none;transition:.25s;
+    }
+    .nx-menu.is-open{opacity:1;pointer-events:auto;transform:none}
+    .nx-drop{position:static;opacity:1;pointer-events:auto;box-shadow:none;border:none;padding:4px;transform:none}
+  }
+
+  /* ================= FOOTER ================= */
+  .nx-footer{
+    margin-top:60px;background:#fdfdfd;
+    border-top:1px solid var(--line);color:var(--text);
+  }
+  .nx-foot-wrap{max-width:1200px;margin:auto;padding:48px 20px}
+  .nx-foot-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .nx-foot-brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text)}
+  .nx-foot-logo{height:36px}
+  .nx-foot-tag{font-size:13px;color:var(--text-2)}
+  .nx-foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;padding:26px 0 6px}
+  .nx-foot-col h4{margin:0 0 12px;color:var(--accent);font-size:15px}
+  .nx-foot-col a{display:block;color:#111;text-decoration:none;padding:7px 0;font-size:14px}
+  .nx-foot-col a:hover{color:var(--accent)}
+  .nx-foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--line);color:var(--text-2);font-size:13px}
+
+  /* ================= CONTENT ================= */
+  .section{max-width:1200px;margin:60px auto;padding:0 20px;}
+  .section h2{margin-bottom:12px;font-size:clamp(26px,3vw,36px);color:var(--accent)}
+  .lead{color:var(--text-2)}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--card);box-shadow:var(--shadow);
+    padding:18px;transition:.3s;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(202,160,61,.4);
+    background:#fefdfb;
+  }
+  .pill{
+    display:inline-block;
+    background:var(--gold-t);
+    color:var(--accent);
+    border-radius:999px;
+    padding:4px 10px;
+    font-size:12px;
+    font-weight:700;
+  }
+  .bullet{margin-top:8px;padding-left:18px}
+  .bullet li{color:#374151}
+  /* ===== Card visibility improvements ===== */
+:root{
+  /* slightly darker separator line for more contrast */
+  --line: rgba(0,0,0,.10);
+}
+
+.section{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.grid{
+  gap:24px;                 /* a bit more air between cards */
+}
+
+.card{
+  background:#ffffff;       /* pure white cards */
+  border:1px solid #e5e7eb; /* clear light-grey edge */
+  box-shadow: 0 8px 20px rgba(17,24,39,.06);  /* soft elevation */
+  transition: transform .25s ease, box-shadow .25s ease, Aborder-color .25s ease, background .25s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(202,160,61,.40);   /* gold ring on hover */
+  box-shadow: 0 14px 30px rgba(17,24,39,.10);
+  background: #fffdf7;                  /* whisper of warm tint */
+}
+
+/* Make headings & labels read cleaner on light background */
+.pill{
+  background: rgba(202,160,61,.12);
+  color: #caa03d;
+}
+.bullet li{
+  color:#374151; /* darker grey for readability */
+}
+/* size the partner logo in header */
+.nx-logo2{
+  height:48px !important;
+  width:auto !important;
+  max-width:220px !important;
+  object-fit:contain;
+  margin-left:10px;
+}
+
+/* ensure footer logos are constrained even if they use .nx-logo/.nx-logo2 */
+.nx-footer .nx-logo,
+.nx-footer .nx-logo2{
+  height:50px !important;
+  width:auto !important;
+  max-width:240px !important;
+  object-fit:contain;
+  vertical-align:middle;
+}
+
+@media (max-width:768px){
+  .nx-logo2,
+  .nx-footer .nx-logo,
+  .nx-footer .nx-logo2{
+    height:40px !important;
+    max-width:180px !important;
+  }
+}
+
+
+
+
+    /* ================= MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
+    /* Keep content unchanged — only improves small-device behavior */
+
+    html, body { overflow-x: hidden; }
+
+    :root{
+      --safeL: max(14px, env(safe-area-inset-left));
+      --safeR: max(14px, env(safe-area-inset-right));
+    }
+
+    .container{
+      padding-left: var(--safeL) !important;
+      padding-right: var(--safeR) !important;
+    }
+
+    /* NAV: prevent brand overflow on very small screens */
+    .nx-brand{ min-width:0; max-width:72%; }
+    .nx-logo, .nx-logo2{ max-width:100%; }
+    @media (max-width:420px){ .nx-logo2{ display:none; } }
+
+    /* MOBILE MENU: use viewport height + allow scrolling inside */
+    @media (max-width:1024px){
+      .nx-menu{
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding-bottom: 14px;
+        border-radius: 0 0 18px 18px;
+      }
+
+      /* wrap long labels */
+      .nx-link, .nx-drop a{
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      /* smooth dropdown open/close without touching HTML */
+      .nx-drop{
+        display:block;       /* participate */
+        max-height:0;        /* collapsed */
+        opacity:0;
+        overflow:hidden;
+        transition: max-height .35s ease, opacity .25s ease;
+        padding: 0;
+        margin: 0;
+      }
+      .nx-item.open > .nx-drop{
+        max-height: 900px;
+        opacity: 1;
+        padding: 6px 0 0;
+      }
+    }
+
+    /* Small phones: button full width, slower ticker */
+    @media (max-width:540px){
+      .btn{ width:100%; justify-content:center; }
+      .hero__inner{ gap:18px; }
+      .hero p{ font-size:15px; }
+      .ticker__row{ animation-duration:42s !important; }
+    }
+
+    /* Pause ticker on hover/touch */
+    .ticker:hover .ticker__row,
+    .ticker:active .ticker__row{ animation-play-state: paused; }
+
+    /* Lock background scroll when menu open (JS toggles this class) */
+    body.nav-locked{ overflow:hidden; touch-action:none; }
+    /* ================= END MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
+
+  
+
+    /* === MOBILE_RESPONSIVE_PATCH v1 (do not remove) === */
+    html, body { overflow-x: hidden; }
+    
+    /* safe area padding for notches */
+    :root{
+      --safeL: max(14px, env(safe-area-inset-left));
+      --safeR: max(14px, env(safe-area-inset-right));
+    }
+    
+    /* containers: prevent edge clipping on small devices */
+    .container{
+      padding-left: var(--safeL) !important;
+      padding-right: var(--safeR) !important;
+    }
+    
+    /* NAV: prevent logo/menu overflow */
+    .nx-brand{ min-width:0; max-width:72%; }
+    .nx-logo,.nx-logo2{ max-width:100%; }
+    
+    /* hide partner logo on very small phones */
+    @media (max-width:420px){
+      .nx-logo2{ display:none !important; }
+    }
+    
+    /* Mobile menu: scroll inside + safe height */
+    @media (max-width:1024px){
+      .nx-menu{
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding-bottom: 14px;
+        border-radius: 0 0 18px 18px;
+      }
+    
+      /* wrap long nav labels */
+      .nx-link, .nx-drop a{
+        white-space: normal;
+        word-break: break-word;
+      }
+    
+      /* Smooth dropdown accordion (works with existing .nx-item.open toggles) */
+      .nx-drop{
+        display:block !important;
+        max-height:0;
+        opacity:0;
+        overflow:hidden;
+        transition:max-height .35s ease, opacity .25s ease;
+        padding:0 !important;
+        margin:0 !important;
+      }
+      .nx-item.open > .nx-drop{
+        max-height: 1200px;
+        opacity: 1;
+        padding-top: 6px !important;
+      }
+    }
+    
+    /* HERO & CTA: full width buttons on small phones */
+    @media (max-width:540px){
+      .btn{ width:100%; justify-content:center; }
+      .hero__inner{ gap:18px; }
+      .hero p{ font-size:15px; }
+    }
+    
+    /* Ticker: slower on mobile + pause on touch/hover */
+    @media (max-width:540px){
+      .ticker__row{ animation-duration:42s !important; }
+    }
+    .ticker:hover .ticker__row,
+    .ticker:active .ticker__row{
+      animation-play-state: paused;
+    }
+    
+    /* lock background scroll when menu open (JS syncs this class) */
+    body.nav-locked{
+      overflow:hidden;
+      touch-action:none;
+    }
+    /* === END MOBILE_RESPONSIVE_PATCH v1 === */
+  </style>
+<link href="assets/stoxgear-pro.css" rel="stylesheet"/>  <link rel="stylesheet" href="assets/cm-enhance.css">
+  <link rel="stylesheet" href="assets/stoxgear-cinema.css">
+</head>
+<style>
+html.is-mobile .container{
+  grid-template-columns:1fr !important;
+  padding:32px 14px 60px !important;
+  gap:16px !important;
+}
+html.is-mobile .card img{height:180px !important;padding:16px !important;}
+html.is-mobile .card-content{padding:18px !important;}
+html.is-mobile .nx-cta{display:none !important;}
+</style>
+<script>
+(function(){
+  const root=document.documentElement;
+  function detect(){
+    const mobile =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 768px)").matches ||
+      /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    root.classList.toggle("is-mobile",mobile);
+    root.classList.toggle("is-desktop",!mobile);
+  }
+  detect();
+  window.addEventListener("resize",detect,{passive:true});
+})();
+</script>
+<body data-page="investorguid.html">
+<header class="nx-navbar" id="nxHeader">
+<div class="nx-nav-inner">
+<a aria-label="StoxGear Home" class="nx-brand" href="index.html">
+<img alt="StoxGear" class="nx-logo" src="stoxgear-logo.jpg"/>
+<img alt="Partner" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
+</a>
+<div class="nx-grow"></div>
+<nav aria-label="Primary navigation" class="nx-menu" id="nxMenu">
+<div class="nx-item">
+<a class="nx-link" data-dd="dd-why" href="#">Why Us</a>
+<div class="nx-drop" id="dd-why">
+<a href="about.html">About Us</a>
+<a href="BOARD of directors.html">Board / Management</a>
+<a href="Mission.html">Mission &amp; Vision</a>
+<a href="associated companies.html">Associated Companies</a>
+<a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
+<a href="services.html">Services</a>
+<a href="Registered agents..html">Registered Agents</a>
+</div>
+</div>
+<div class="nx-item">
+<a class="nx-link" data-dd="dd-edu" href="#">Education</a>
+<div class="nx-drop" id="dd-edu">
+<a href="New to trading.html">New to Trading</a>
+<a href="Investorguid.html">Investor Guide</a>
+<a href="Glossary.html">Glossary</a>
+<a href="psx-rule-book.html">PSX Rule Book</a>
+<a href="common-terms-share-market.html">Common Terms of Share Market</a>
+<a href="online-order-execution-flow.html">Order Execution Flow</a>
+<a href="order-settlement-flow.html">Order Settlement Flow</a>
+<a href="arbitration-procedure.html">Arbitration Procedure</a>
+<a href="risk-disclosure-document.html">Risk Disclosure Document</a>
+<a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
+<a href="faqs.html">FAQs</a>
+</div>
+</div>
+<div class="nx-item">
+<a class="nx-link" data-dd="dd-open" href="#">Open Account</a>
+<div class="nx-drop" id="dd-open">
+<a href="Rda.html">Roshan Digital Account</a>
+<a href="Acoocint opening.html">Open Digital Account</a>
+<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+</div>
+</div>
+<div class="nx-item">
+<a class="nx-link" data-dd="dd-dl" href="#">Downloads</a>
+<div class="nx-drop" id="dd-dl">
+<a href="Forms.html">Forms</a>
+<a href="software.html">Software</a>
+<a href="Annaual half yearly.html">Financial Statements</a>
+<a href="KYC poslicy.html">CDD / KYC Policy</a>
+</div>
+</div>
+<div class="nx-item">
+<a class="nx-link" data-dd="dd-sup" href="#">Support</a>
+<div class="nx-drop" id="dd-sup">
+<a href="investor complaint.html">Investor Complaint</a>
+<a href="Pending investor complaun.html">Pending Complaints</a>
+<a href="Penal action.html">Penal Action</a>
+<a href="Secp complaint.html">SECP Complaint</a>
+<a href="psx complaint.html">PSX Complaint</a>
+<a href="UIs of NICCPL.html">UIS Services</a>
+<a href="Eservices By CDC.html">EServices by CDC</a>
+</div>
+</div>
+<div class="nx-item">
+<a class="nx-link" href="Contact.html">Contact</a>
+</div>
+</nav>
+<button class="nx-cta" type="button">OPEN AN ACCOUNT</button>
+<button aria-expanded="false" aria-label="Open menu" class="nx-toggle" id="nxToggle">☰</button>
+</div>
+</header>
+<!-- ====== MAIN CONTENT ====== -->
+<main>
+<section class="section">
+<h2>Investor Guide</h2>
+<p class="lead">Start your investment journey with simple, practical insights.</p>
+<div class="grid">
+<div class="card">
+<span class="pill">Tips</span>
+<h3>Make smarter investment decisions</h3>
+<ul class="bullet">
+<li>Diversify across sectors</li>
+<li>Focus on fundamentals</li>
+<li>Invest for long-term goals</li>
+</ul>
+</div>
+<div class="card">
+<span class="pill">Trading</span>
+<h3>Before buying any stock</h3>
+<ul class="bullet">
+<li>Review company performance</li>
+<li>Understand industry outlook</li>
+<li>Compare valuations</li>
+</ul>
+</div>
+<div class="card">
+<span class="pill">CDC</span>
+<h3>Why use Central Depository System</h3>
+<p>Securely hold and transfer shares electronically, eliminating paperwork and delays.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- ========== FOOTER ========== -->
+<footer class="nx-footer">
+<div class="nx-foot-wrap">
+<div class="nx-foot-top">
+<a class="nx-foot-brand" href="index.html">
+<img alt="Stoxgear Securities (Private) Limited" class="nx-logo" src="stoxgear-logo.jpg"/>
+<!-- second/partner logo -->
+<img alt="Partner Logo" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 
+
+
+10.34.53_ed0e28f6.jpg"/>
+</a>
+</div>
+<div class="nx-foot-grid">
+<div class="nx-foot-col">
+<h4>WHY US</h4>
+<a href="about.html">About Us</a>
+<a href="BOARD of directors.html">Board / Management</a>
+<a href="Mission.html">Mission &amp; Vision</a>
+</div>
+<div class="nx-foot-col">
+<h4>EDUCATION</h4>
+<a href="New to trading.html">New to Trading</a>
+<a href="Investorguid.html">Investor Guide</a>
+<a href="Glossary.html">Glossary</a>
+</div>
+<div class="nx-foot-col">
+<h4>ACCOUNT</h4>
+<a href="Rda.html">Roshan Digital Account</a>
+<a href="Acoocint opening.html">Open Digital Account</a>
+<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+</div>
+<div class="nx-foot-col">
+<h4>CONTACT</h4>
+<a href="mailto:info@StoxGear.com">info@StoxGear.com</a>
+<a href="tel:+923162288686">+92 316 2288686</a>
+<a href="#">Peshawar, Pakistan</a>
+</div>
+</div>
+<div class="nx-foot-bottom">
+<span>© <script>document.write(new Date().getFullYear())</script> StocX Invest</span>
+<span><a href="#" style="color:var(--text-2);text-decoration:none">Privacy</a> · <a href="#" style="color:var(--text-2);text-decoration:none">Terms</a></span>
+</div>
+</div>
+</footer>
+<script>
+const toggle=document.getElementById('nxToggle');
+const menu=document.getElementById('nxMenu');
+toggle.addEventListener('click',()=>{
+  menu.classList.toggle('is-open');
+  toggle.setAttribute('aria-expanded',menu.classList.contains('is-open'));
+});
+</script>
+<script>
+// === MOBILE_RESPONSIVE_PATCH v1 (do not remove) ===
+(function(){
+  const header = document.getElementById('nxHeader');
+  const toggle = document.getElementById('nxToggle');
+  const menu   = document.getElementById('nxMenu');
+  if(!header) return;
+
+  const isMobile = () => window.matchMedia && window.matchMedia('(max-width:1024px)').matches;
+
+  // Sync body lock with menu open state (does NOT toggle, only sync)
+  const syncLock = () => {
+    const open = header.classList.contains('is-open') && isMobile();
+    document.body.classList.toggle('nav-locked', open);
+  };
+
+  // after any toggle click, sync lock
+  if(toggle){
+    toggle.addEventListener('click', ()=> setTimeout(syncLock, 0));
+  }
+
+  // close menu if switching to desktop width
+  window.addEventListener('resize', ()=>{
+    if(!isMobile()){
+      header.classList.remove('is-open');
+      document.body.classList.remove('nav-locked');
+      toggle && toggle.setAttribute('aria-expanded','false');
+      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
+    }else{
+      syncLock();
+    }
+  }, {passive:true});
+
+  // click outside closes on mobile (if page doesn't already)
+  document.addEventListener('click', (e)=>{
+    if(!isMobile()) return;
+    if(!header.contains(e.target)){
+      header.classList.remove('is-open');
+      document.body.classList.remove('nav-locked');
+      toggle && toggle.setAttribute('aria-expanded','false');
+      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
+    }
+  });
+
+  // initial
+  syncLock();
+})();
+// === END MOBILE_RESPONSIVE_PATCH v1 ===
+  </script>
+
+  <script defer src="assets/cm-enhance.js"></script>
+  <script defer src="assets/stoxgear-cinema.js"></script>
+</body>
+</html>
