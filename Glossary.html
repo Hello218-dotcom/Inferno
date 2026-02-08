@@ -1,772 +1,772 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>STOXGEAR — Glossary</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --bg:#ffffff;
-  --panel:#ffffff;
-  --ink:#1f2937;
-  --muted:#6b7280;
-  --line:#e7e9ee;
-
-  --accent:#c9a646;
-  --accent-2:#b38b2e;
-
-  --radius:16px;
-  --shadow:0 8px 20px rgba(0,0,0,.08);
-  --shadow2:0 16px 40px rgba(0,0,0,.12);
-  --maxw:1200px;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  background:var(--bg);
-  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink);
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ===== Device classes (JS adds these) ===== */
-html.is-mobile body{ font-size:16px; }
-html.is-desktop body{ font-size:16px; }
-
-@media (prefers-reduced-motion: reduce){
-  *{ animation-duration:0.001ms!important; animation-iteration-count:1!important; transition-duration:0.001ms!important; scroll-behavior:auto!important; }
-}
-
-/* ================= NAVBAR ================= */
-.nx-navbar a{ text-decoration:none!important; }
-.nx-navbar a:hover,.nx-navbar a:focus,.nx-navbar a:active{ text-decoration:none!important; }
-
-.nx-navbar{
-  position:sticky;top:0;z-index:1000;
-  background:#fff;
-  border-bottom:1px solid var(--line);
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-  transition:box-shadow .25s ease;
-}
-.nx-navbar.scrolled{ box-shadow:0 10px 28px rgba(0,0,0,.12); }
-
-.nx-nav-inner{
-  max-width:var(--maxw);margin:0 auto;
-  padding:14px 24px;
-  display:flex;align-items:center;gap:16px;
-  position:relative;
-}
-.nx-brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
-.nx-logo{height:50px;width:auto;object-fit:contain}
-.nx-logo2{height:40px;width:auto;margin-left:10px;max-width:220px;object-fit:contain}
-.nx-grow{flex:1}
-
-.nx-menu{display:flex;align-items:center;gap:26px}
-.nx-item{position:relative}
-.nx-link{
-  color:var(--muted);
-  font-weight:700;
-  position:relative;
-  text-decoration:none!important;
-}
-.nx-link:hover{color:var(--accent)}
-.nx-link:after{
-  content:"";position:absolute;bottom:-6px;left:0;
-  width:0;height:2px;background:var(--accent);
-  transition:.25s;
-}
-.nx-link:hover:after{width:100%}
-
-/* Dropdown */
-.nx-drop{
-  position:absolute;top:calc(100% + 10px);left:0;
-  min-width:230px;background:#fff;
-  border:1px solid var(--line);padding:10px;
-  border-radius:var(--radius);
-  display:none;box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
-.nx-drop a{
-  display:block;padding:10px 12px;color:#111;
-  text-decoration:none !important;border-radius:10px;
-  font-weight:800; font-size:16px; letter-spacing:-0.01em;   /* dropdown font like your screenshot */
-}
-.nx-drop a:hover{background:#f6f6f6;color:var(--accent)}
-
-@media (min-width:1025px){
-  .nx-item:hover>.nx-drop{display:block}
-}
-
-/* Mobile menu */
-.nx-toggle{
-  display:none;background:#fff;border:1px solid var(--line);
-  padding:6px 12px;border-radius:10px;font-size:20px;cursor:pointer;
-}
-@media (max-width:1024px){
-  .nx-toggle{display:block}
-  .nx-menu{
-    display:none;flex-direction:column;gap:8px;
-    position:absolute;top:100%;left:0;right:0;
-    background:#fff;border-top:1px solid var(--line);
-    padding:10px 12px;box-shadow:0 12px 26px rgba(0,0,0,.08);
+  <!DOCTYPE html>
+  
+  <html lang="en">
+  <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>STOXGEAR — Glossary</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+  :root{
+    --bg:#ffffff;
+    --panel:#ffffff;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --line:#e7e9ee;
+  
+    --accent:#c9a646;
+    --accent-2:#b38b2e;
+  
+    --radius:16px;
+    --shadow:0 8px 20px rgba(0,0,0,.08);
+    --shadow2:0 16px 40px rgba(0,0,0,.12);
+    --maxw:1200px;
   }
-  .nx-navbar.is-open .nx-menu{display:flex}
-  .nx-item{width:100%}
+  
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  
+  /* ===== Device classes (JS adds these) ===== */
+  html.is-mobile body{ font-size:16px; }
+  html.is-desktop body{ font-size:16px; }
+  
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms!important; animation-iteration-count:1!important; transition-duration:0.001ms!important; scroll-behavior:auto!important; }
+  }
+  
+  /* ================= NAVBAR ================= */
+  .nx-navbar a{ text-decoration:none!important; }
+  .nx-navbar a:hover,.nx-navbar a:focus,.nx-navbar a:active{ text-decoration:none!important; }
+  
+  .nx-navbar{
+    position:sticky;top:0;z-index:1000;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    transition:box-shadow .25s ease;
+  }
+  .nx-navbar.scrolled{ box-shadow:0 10px 28px rgba(0,0,0,.12); }
+  
+  .nx-nav-inner{
+    max-width:var(--maxw);margin:0 auto;
+    padding:14px 24px;
+    display:flex;align-items:center;gap:16px;
+    position:relative;
+  }
+  .nx-brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+  .nx-logo{height:50px;width:auto;object-fit:contain}
+  .nx-logo2{height:40px;width:auto;margin-left:10px;max-width:220px;object-fit:contain}
+  .nx-grow{flex:1}
+  
+  .nx-menu{display:flex;align-items:center;gap:26px}
+  .nx-item{position:relative}
+  .nx-link{
+    color:var(--muted);
+    font-weight:700;
+    position:relative;
+    text-decoration:none!important;
+  }
+  .nx-link:hover{color:var(--accent)}
+  .nx-link:after{
+    content:"";position:absolute;bottom:-6px;left:0;
+    width:0;height:2px;background:var(--accent);
+    transition:.25s;
+  }
+  .nx-link:hover:after{width:100%}
+  
+  /* Dropdown */
   .nx-drop{
-    position:static;border:none;box-shadow:none;background:none;padding:0;display:none;
-  }
-  .nx-item.open>.nx-drop{display:block}
-}
-
-/* CTA button like your image */
-.nx-cta{
-  background: linear-gradient(180deg, #d1b155, #c09a2f);
-  color:#000;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  padding:14px 34px;
-  border-radius:999px;
-  border:none;
-  cursor:pointer;
-  box-shadow:0 12px 26px rgba(0,0,0,.10);
-  transition:.2s ease;
-}
-.nx-cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
-.nx-cta:active{transform:translateY(0) scale(.99)}
-@media (max-width:1024px){ .nx-cta{display:none;} }
-
-/* PAGE TITLE */
-h1{
-  text-align:center;margin:70px 0 10px;
-  color:var(--accent);
-  font-size:clamp(30px,4vw,46px);
-  font-weight:900;
-}
-.search-bar{text-align:center;margin-bottom:28px}
-.search-bar input{
-  width:92%;max-width:520px;
-  padding:14px 16px;border-radius:14px;
-  border:1px solid var(--line);outline:none;
-  font-family:inherit;
-}
-
-/* GRID */
-.grid{
-  max-width:1200px;margin:auto;
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-@media (max-width:980px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
-@media (max-width:640px){ .grid{grid-template-columns:1fr; padding:14px;} }
-
-.card{
-  background:#fff;border:1px solid var(--line);
-  padding:20px;border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  transition:.25s ease;
-
-  opacity:0;
-  transform:translateY(14px);
-}
-.card.show{opacity:1;transform:none;}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:var(--shadow2);
-  border-color:rgba(201,166,70,.35);
-}
-.term{color:var(--accent);font-weight:800;margin-bottom:8px}
-.meaning{opacity:.9;line-height:1.6}
-
-/* FOOTER */
-.nx-footer{
-  margin-top:60px;
-  background:#fafafa;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-}
-.nx-foot-wrap{
-  max-width:1200px;margin:auto;
-  padding:48px 20px;
-}
-.nx-foot-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:26px;padding:22px 0 10px;
-}
-@media(max-width:900px){.nx-foot-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.nx-foot-grid{grid-template-columns:1fr}}
-.nx-foot-col h4{
-  font-size:14px;color:var(--accent);
-  margin:0 0 14px;letter-spacing:.08em;text-transform:uppercase;font-weight:900
-}
-.nx-foot-col a{
-  color:#1f2937;padding:6px 0;font-size:14px;
-  display:block;text-decoration:none !important;
-  opacity:1;transition:.2s ease;
-}
-.nx-foot-col a:hover{transform:translateX(2px);color:#7a5b13}
-.nx-foot-bottom{
-  padding-top:16px;border-top:1px solid var(--line);
-  font-size:13px;text-align:center;color:var(--muted);
-}
-  /* ===================== MOBILE RESPONSIVE PATCH (PASTE ONLY) ===================== */
-
-/* 1) NAVBAR: stop menu items breaking into two lines (desktop like your 2nd pic) */
-.nx-menu{ 
-  flex-wrap: nowrap !important; 
-  white-space: nowrap !important; 
-}
-.nx-link{ 
-  white-space: nowrap !important; 
-}
-
-/* tighten spacing on medium screens so all items fit in one row */
-@media (max-width:1200px){
-  .nx-menu{ gap: 18px !important; }
-  .nx-link{ font-size: 14px !important; }
-  .nx-logo{ height: 44px !important; }
-  .nx-logo2{ height: 40px !important; max-width: 180px !important; }
-}
-
-/* 2) CTA button style (your gold rounded button) */
-.nx-cta{
-  background: linear-gradient(180deg, #d1b155, #c09a2f) !important;
-  color:#000 !important;
-  font-weight:900 !important;
-  letter-spacing:.06em !important;
-  text-transform:uppercase !important;
-  padding:14px 34px !important;
-  border-radius:999px !important;
-  border:none !important;
-  box-shadow:0 12px 26px rgba(0,0,0,.10) !important;
-}
-.nx-cta:hover{ filter:brightness(1.05) !important; transform:translateY(-1px) !important; }
-.nx-cta:active{ transform:translateY(0) scale(.99) !important; }
-
-/* 3) MOBILE NAV: make menu full width and easy to tap */
-@media (max-width:1024px){
-  .nx-cta{ display:none !important; } /* optional on mobile */
-  .nx-menu{
-    width: calc(100% - 24px) !important;
-    margin: 0 auto !important;
-    gap: 10px !important;
+    position:absolute;top:calc(100% + 10px);left:0;
+    min-width:230px;background:#fff;
+    border:1px solid var(--line);padding:10px;
+    border-radius:var(--radius);
+    display:none;box-shadow:0 12px 28px rgba(0,0,0,.12);
   }
   .nx-drop a{
-    font-weight:800 !important;
-    font-size:16px !important;
-    color:#111 !important;
+    display:block;padding:10px 12px;color:#111;
+    text-decoration:none !important;border-radius:10px;
+    font-weight:800; font-size:16px; letter-spacing:-0.01em;   /* dropdown font like your screenshot */
   }
-}
-
-/* 4) GLOSSARY GRID: responsive layout */
-.grid{
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-}
-
-@media (max-width:980px){
-  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-}
-
-@media (max-width:640px){
-  .grid{ grid-template-columns: 1fr !important; padding: 14px !important; gap: 14px !important; }
-  h1{ margin: 56px 0 10px !important; }
-  .search-bar input{ width: 92% !important; }
-}
-
-/* 5) CARDS: better spacing + subtle hover */
-.card{
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important;
-}
-.card:hover{
-  transform: translateY(-6px) !important;
-  box-shadow: 0 16px 40px rgba(0,0,0,.12) !important;
-  border-color: rgba(201,166,70,.35) !important;
-}
-
-/* 6) Optional: simple reveal animation (works without JS) */
-.card{
-  animation: fadeUp .45s ease both;
-}
-@keyframes fadeUp{
-  from{ opacity:0; transform: translateY(10px); }
-  to{ opacity:1; transform: translateY(0); }
-}
-
-
-
-    /* ================= MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
-    /* Keep content unchanged — only improves small-device behavior */
-
-    html, body { overflow-x: hidden; }
-
-    :root{
-      --safeL: max(14px, env(safe-area-inset-left));
-      --safeR: max(14px, env(safe-area-inset-right));
-    }
-
-    .container{
-      padding-left: var(--safeL) !important;
-      padding-right: var(--safeR) !important;
-    }
-
-    /* NAV: prevent brand overflow on very small screens */
-    .nx-brand{ min-width:0; max-width:72%; }
-    .nx-logo, .nx-logo2{ max-width:100%; }
-    @media (max-width:420px){ .nx-logo2{ display:none; } }
-
-    /* MOBILE MENU: use viewport height + allow scrolling inside */
-    @media (max-width:1024px){
-      .nx-menu{
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        padding-bottom: 14px;
-        border-radius: 0 0 18px 18px;
-      }
-
-      /* wrap long labels */
-      .nx-link, .nx-drop a{
-        white-space: normal;
-        word-break: break-word;
-      }
-
-      /* smooth dropdown open/close without touching HTML */
-      .nx-drop{
-        display:block;       /* participate */
-        max-height:0;        /* collapsed */
-        opacity:0;
-        overflow:hidden;
-        transition: max-height .35s ease, opacity .25s ease;
-        padding: 0;
-        margin: 0;
-      }
-      .nx-item.open > .nx-drop{
-        max-height: 900px;
-        opacity: 1;
-        padding: 6px 0 0;
-      }
-    }
-
-    /* Small phones: button full width, slower ticker */
-    @media (max-width:540px){
-      .btn{ width:100%; justify-content:center; }
-      .hero__inner{ gap:18px; }
-      .hero p{ font-size:15px; }
-      .ticker__row{ animation-duration:42s !important; }
-    }
-
-    /* Pause ticker on hover/touch */
-    .ticker:hover .ticker__row,
-    .ticker:active .ticker__row{ animation-play-state: paused; }
-
-    /* Lock background scroll when menu open (JS toggles this class) */
-    body.nav-locked{ overflow:hidden; touch-action:none; }
-    /* ================= END MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
-
+  .nx-drop a:hover{background:#f6f6f6;color:var(--accent)}
   
-
-    /* === MOBILE_RESPONSIVE_PATCH v1 (do not remove) === */
-    html, body { overflow-x: hidden; }
-    
-    /* safe area padding for notches */
-    :root{
-      --safeL: max(14px, env(safe-area-inset-left));
-      --safeR: max(14px, env(safe-area-inset-right));
+  @media (min-width:1025px){
+    .nx-item:hover>.nx-drop{display:block}
+  }
+  
+  /* Mobile menu */
+  .nx-toggle{
+    display:none;background:#fff;border:1px solid var(--line);
+    padding:6px 12px;border-radius:10px;font-size:20px;cursor:pointer;
+  }
+  @media (max-width:1024px){
+    .nx-toggle{display:block}
+    .nx-menu{
+      display:none;flex-direction:column;gap:8px;
+      position:absolute;top:100%;left:0;right:0;
+      background:#fff;border-top:1px solid var(--line);
+      padding:10px 12px;box-shadow:0 12px 26px rgba(0,0,0,.08);
     }
-    
-    /* containers: prevent edge clipping on small devices */
-    .container{
-      padding-left: var(--safeL) !important;
-      padding-right: var(--safeR) !important;
+    .nx-navbar.is-open .nx-menu{display:flex}
+    .nx-item{width:100%}
+    .nx-drop{
+      position:static;border:none;box-shadow:none;background:none;padding:0;display:none;
     }
-    
-    /* NAV: prevent logo/menu overflow */
-    .nx-brand{ min-width:0; max-width:72%; }
-    .nx-logo,.nx-logo2{ max-width:100%; }
-    
-    /* hide partner logo on very small phones */
-    @media (max-width:420px){
-      .nx-logo2{ display:none !important; }
+    .nx-item.open>.nx-drop{display:block}
+  }
+  
+  /* CTA button like your image */
+  .nx-cta{
+    background: linear-gradient(180deg, #d1b155, #c09a2f);
+    color:#000;
+    font-weight:900;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:14px 34px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 12px 26px rgba(0,0,0,.10);
+    transition:.2s ease;
+  }
+  .nx-cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .nx-cta:active{transform:translateY(0) scale(.99)}
+  @media (max-width:1024px){ .nx-cta{display:none;} }
+  
+  /* PAGE TITLE */
+  h1{
+    text-align:center;margin:70px 0 10px;
+    color:var(--accent);
+    font-size:clamp(30px,4vw,46px);
+    font-weight:900;
+  }
+  .search-bar{text-align:center;margin-bottom:28px}
+  .search-bar input{
+    width:92%;max-width:520px;
+    padding:14px 16px;border-radius:14px;
+    border:1px solid var(--line);outline:none;
+    font-family:inherit;
+  }
+  
+  /* GRID */
+  .grid{
+    max-width:1200px;margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+  }
+  @media (max-width:980px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  @media (max-width:640px){ .grid{grid-template-columns:1fr; padding:14px;} }
+  
+  .card{
+    background:#fff;border:1px solid var(--line);
+    padding:20px;border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:.25s ease;
+  
+    opacity:0;
+    transform:translateY(14px);
+  }
+  .card.show{opacity:1;transform:none;}
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow2);
+    border-color:rgba(201,166,70,.35);
+  }
+  .term{color:var(--accent);font-weight:800;margin-bottom:8px}
+  .meaning{opacity:.9;line-height:1.6}
+  
+  /* FOOTER */
+  .nx-footer{
+    margin-top:60px;
+    background:#fafafa;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+  }
+  .nx-foot-wrap{
+    max-width:1200px;margin:auto;
+    padding:48px 20px;
+  }
+  .nx-foot-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:26px;padding:22px 0 10px;
+  }
+  @media(max-width:900px){.nx-foot-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.nx-foot-grid{grid-template-columns:1fr}}
+  .nx-foot-col h4{
+    font-size:14px;color:var(--accent);
+    margin:0 0 14px;letter-spacing:.08em;text-transform:uppercase;font-weight:900
+  }
+  .nx-foot-col a{
+    color:#1f2937;padding:6px 0;font-size:14px;
+    display:block;text-decoration:none !important;
+    opacity:1;transition:.2s ease;
+  }
+  .nx-foot-col a:hover{transform:translateX(2px);color:#7a5b13}
+  .nx-foot-bottom{
+    padding-top:16px;border-top:1px solid var(--line);
+    font-size:13px;text-align:center;color:var(--muted);
+  }
+    /* ===================== MOBILE RESPONSIVE PATCH (PASTE ONLY) ===================== */
+  
+  /* 1) NAVBAR: stop menu items breaking into two lines (desktop like your 2nd pic) */
+  .nx-menu{ 
+    flex-wrap: nowrap !important; 
+    white-space: nowrap !important; 
+  }
+  .nx-link{ 
+    white-space: nowrap !important; 
+  }
+  
+  /* tighten spacing on medium screens so all items fit in one row */
+  @media (max-width:1200px){
+    .nx-menu{ gap: 18px !important; }
+    .nx-link{ font-size: 14px !important; }
+    .nx-logo{ height: 44px !important; }
+    .nx-logo2{ height: 40px !important; max-width: 180px !important; }
+  }
+  
+  /* 2) CTA button style (your gold rounded button) */
+  .nx-cta{
+    background: linear-gradient(180deg, #d1b155, #c09a2f) !important;
+    color:#000 !important;
+    font-weight:900 !important;
+    letter-spacing:.06em !important;
+    text-transform:uppercase !important;
+    padding:14px 34px !important;
+    border-radius:999px !important;
+    border:none !important;
+    box-shadow:0 12px 26px rgba(0,0,0,.10) !important;
+  }
+  .nx-cta:hover{ filter:brightness(1.05) !important; transform:translateY(-1px) !important; }
+  .nx-cta:active{ transform:translateY(0) scale(.99) !important; }
+  
+  /* 3) MOBILE NAV: make menu full width and easy to tap */
+  @media (max-width:1024px){
+    .nx-cta{ display:none !important; } /* optional on mobile */
+    .nx-menu{
+      width: calc(100% - 24px) !important;
+      margin: 0 auto !important;
+      gap: 10px !important;
     }
-    
-    /* Mobile menu: scroll inside + safe height */
-    @media (max-width:1024px){
-      .nx-menu{
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        padding-bottom: 14px;
-        border-radius: 0 0 18px 18px;
+    .nx-drop a{
+      font-weight:800 !important;
+      font-size:16px !important;
+      color:#111 !important;
+    }
+  }
+  
+  /* 4) GLOSSARY GRID: responsive layout */
+  .grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  
+  @media (max-width:980px){
+    .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+  
+  @media (max-width:640px){
+    .grid{ grid-template-columns: 1fr !important; padding: 14px !important; gap: 14px !important; }
+    h1{ margin: 56px 0 10px !important; }
+    .search-bar input{ width: 92% !important; }
+  }
+  
+  /* 5) CARDS: better spacing + subtle hover */
+  .card{
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important;
+  }
+  .card:hover{
+    transform: translateY(-6px) !important;
+    box-shadow: 0 16px 40px rgba(0,0,0,.12) !important;
+    border-color: rgba(201,166,70,.35) !important;
+  }
+  
+  /* 6) Optional: simple reveal animation (works without JS) */
+  .card{
+    animation: fadeUp .45s ease both;
+  }
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  
+  
+  
+      /* ================= MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
+      /* Keep content unchanged — only improves small-device behavior */
+  
+      html, body { overflow-x: hidden; }
+  
+      :root{
+        --safeL: max(14px, env(safe-area-inset-left));
+        --safeR: max(14px, env(safe-area-inset-right));
       }
-    
-      /* wrap long nav labels */
-      .nx-link, .nx-drop a{
-        white-space: normal;
-        word-break: break-word;
+  
+      .container{
+        padding-left: var(--safeL) !important;
+        padding-right: var(--safeR) !important;
       }
+  
+      /* NAV: prevent brand overflow on very small screens */
+      .nx-brand{ min-width:0; max-width:72%; }
+      .nx-logo, .nx-logo2{ max-width:100%; }
+      @media (max-width:420px){ .nx-logo2{ display:none; } }
+  
+      /* MOBILE MENU: use viewport height + allow scrolling inside */
+      @media (max-width:1024px){
+        .nx-menu{
+          max-height: calc(100vh - 64px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
+          padding-bottom: 14px;
+          border-radius: 0 0 18px 18px;
+        }
+  
+        /* wrap long labels */
+        .nx-link, .nx-drop a{
+          white-space: normal;
+          word-break: break-word;
+        }
+  
+        /* smooth dropdown open/close without touching HTML */
+        .nx-drop{
+          display:block;       /* participate */
+          max-height:0;        /* collapsed */
+          opacity:0;
+          overflow:hidden;
+          transition: max-height .35s ease, opacity .25s ease;
+          padding: 0;
+          margin: 0;
+        }
+        .nx-item.open > .nx-drop{
+          max-height: 900px;
+          opacity: 1;
+          padding: 6px 0 0;
+        }
+      }
+  
+      /* Small phones: button full width, slower ticker */
+      @media (max-width:540px){
+        .btn{ width:100%; justify-content:center; }
+        .hero__inner{ gap:18px; }
+        .hero p{ font-size:15px; }
+        .ticker__row{ animation-duration:42s !important; }
+      }
+  
+      /* Pause ticker on hover/touch */
+      .ticker:hover .ticker__row,
+      .ticker:active .ticker__row{ animation-play-state: paused; }
+  
+      /* Lock background scroll when menu open (JS toggles this class) */
+      body.nav-locked{ overflow:hidden; touch-action:none; }
+      /* ================= END MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
+  
     
-      /* Smooth dropdown accordion (works with existing .nx-item.open toggles) */
-      .nx-drop{
-        display:block !important;
-        max-height:0;
-        opacity:0;
+  
+      /* === MOBILE_RESPONSIVE_PATCH v1 (do not remove) === */
+      html, body { overflow-x: hidden; }
+      
+      /* safe area padding for notches */
+      :root{
+        --safeL: max(14px, env(safe-area-inset-left));
+        --safeR: max(14px, env(safe-area-inset-right));
+      }
+      
+      /* containers: prevent edge clipping on small devices */
+      .container{
+        padding-left: var(--safeL) !important;
+        padding-right: var(--safeR) !important;
+      }
+      
+      /* NAV: prevent logo/menu overflow */
+      .nx-brand{ min-width:0; max-width:72%; }
+      .nx-logo,.nx-logo2{ max-width:100%; }
+      
+      /* hide partner logo on very small phones */
+      @media (max-width:420px){
+        .nx-logo2{ display:none !important; }
+      }
+      
+      /* Mobile menu: scroll inside + safe height */
+      @media (max-width:1024px){
+        .nx-menu{
+          max-height: calc(100vh - 64px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
+          padding-bottom: 14px;
+          border-radius: 0 0 18px 18px;
+        }
+      
+        /* wrap long nav labels */
+        .nx-link, .nx-drop a{
+          white-space: normal;
+          word-break: break-word;
+        }
+      
+        /* Smooth dropdown accordion (works with existing .nx-item.open toggles) */
+        .nx-drop{
+          display:block !important;
+          max-height:0;
+          opacity:0;
+          overflow:hidden;
+          transition:max-height .35s ease, opacity .25s ease;
+          padding:0 !important;
+          margin:0 !important;
+        }
+        .nx-item.open > .nx-drop{
+          max-height: 1200px;
+          opacity: 1;
+          padding-top: 6px !important;
+        }
+      }
+      
+      /* HERO & CTA: full width buttons on small phones */
+      @media (max-width:540px){
+        .btn{ width:100%; justify-content:center; }
+        .hero__inner{ gap:18px; }
+        .hero p{ font-size:15px; }
+      }
+      
+      /* Ticker: slower on mobile + pause on touch/hover */
+      @media (max-width:540px){
+        .ticker__row{ animation-duration:42s !important; }
+      }
+      .ticker:hover .ticker__row,
+      .ticker:active .ticker__row{
+        animation-play-state: paused;
+      }
+      
+      /* lock background scroll when menu open (JS syncs this class) */
+      body.nav-locked{
         overflow:hidden;
-        transition:max-height .35s ease, opacity .25s ease;
-        padding:0 !important;
-        margin:0 !important;
+        touch-action:none;
       }
-      .nx-item.open > .nx-drop{
-        max-height: 1200px;
-        opacity: 1;
-        padding-top: 6px !important;
-      }
+      /* === END MOBILE_RESPONSIVE_PATCH v1 === */
+    </style>
+  <link href="assets/stoxgear-pro.css" rel="stylesheet"/>  <link rel="stylesheet" href="assets/cm-enhance.css">
+    <link rel="stylesheet" href="assets/stoxgear-cinema.css">
+  </head>
+  <body data-page="glossary.html">
+  <header class="nx-navbar" id="nxHeader">
+  <div class="nx-nav-inner">
+  <a aria-label="StoxGear Home" class="nx-brand" href="index.html">
+  <img alt="StoxGear" class="nx-logo" src="stoxgear-logo.jpg"/>
+  <img alt="Partner" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
+  </a>
+  <div class="nx-grow"></div>
+  <nav aria-label="Primary navigation" class="nx-menu" id="nxMenu">
+  <div class="nx-item">
+  <a class="nx-link" data-dd="dd-why" href="#">Why Us</a>
+  <div class="nx-drop" id="dd-why">
+  <a href="about.html">About Us</a>
+  <a href="BOARD of directors.html">Board / Management</a>
+  <a href="Mission.html">Mission &amp; Vision</a>
+  <a href="associated companies.html">Associated Companies</a>
+  <a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
+  <a href="services.html">Services</a>
+  <a href="Registered agents..html">Registered Agents</a>
+  </div>
+  </div>
+  <div class="nx-item">
+  <a class="nx-link" data-dd="dd-edu" href="#">Education</a>
+  <div class="nx-drop" id="dd-edu">
+  <a href="New to trading.html">New to Trading</a>
+  <a href="Investorguid.html">Investor Guide</a>
+  <a href="Glossary.html">Glossary</a>
+  <a href="psx-rule-book.html">PSX Rule Book</a>
+  <a href="common-terms-share-market.html">Common Terms of Share Market</a>
+  <a href="online-order-execution-flow.html">Order Execution Flow</a>
+  <a href="order-settlement-flow.html">Order Settlement Flow</a>
+  <a href="arbitration-procedure.html">Arbitration Procedure</a>
+  <a href="risk-disclosure-document.html">Risk Disclosure Document</a>
+  <a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
+  <a href="faqs.html">FAQs</a>
+  </div>
+  </div>
+  <div class="nx-item">
+  <a class="nx-link" data-dd="dd-open" href="#">Open Account</a>
+  <div class="nx-drop" id="dd-open">
+  <a href="Rda.html">Roshan Digital Account</a>
+  <a href="Acoocint opening.html">Open Digital Account</a>
+  <a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+  </div>
+  </div>
+  <div class="nx-item">
+  <a class="nx-link" data-dd="dd-dl" href="#">Downloads</a>
+  <div class="nx-drop" id="dd-dl">
+  <a href="Forms.html">Forms</a>
+  <a href="software.html">Software</a>
+  <a href="Annaual half yearly.html">Financial Statements</a>
+  <a href="KYC poslicy.html">CDD / KYC Policy</a>
+  </div>
+  </div>
+  <div class="nx-item">
+  <a class="nx-link" data-dd="dd-sup" href="#">Support</a>
+  <div class="nx-drop" id="dd-sup">
+  <a href="investor complaint.html">Investor Complaint</a>
+  <a href="Pending investor complaun.html">Pending Complaints</a>
+  <a href="Penal action.html">Penal Action</a>
+  <a href="Secp complaint.html">SECP Complaint</a>
+  <a href="psx complaint.html">PSX Complaint</a>
+  <a href="UIs of NICCPL.html">UIS Services</a>
+  <a href="Eservices By CDC.html">EServices by CDC</a>
+  </div>
+  </div>
+  <div class="nx-item">
+  <a class="nx-link" href="Contact.html">Contact</a>
+  </div>
+  </nav>
+  <button class="nx-cta" type="button">OPEN AN ACCOUNT</button>
+  <button aria-expanded="false" aria-label="Open menu" class="nx-toggle" id="nxToggle">☰</button>
+  </div>
+  </header>
+  <h1>Investment Glossary</h1>
+  <div class="search-bar">
+  <input id="searchInput" placeholder="Search a term..."/>
+  </div>
+  <div class="grid" id="glossaryGrid">
+  <!-- 60 glossary cards -->
+  <div class="card"><div class="term">Ask Price</div><div class="meaning">Lowest price at which a seller is willing to sell a share.</div></div>
+  <div class="card"><div class="term">Bid Price</div><div class="meaning">Highest price a buyer is willing to pay for a share.</div></div>
+  <div class="card"><div class="term">Spread</div><div class="meaning">Difference between the bid price and ask price.</div></div>
+  <div class="card"><div class="term">Market Order</div><div class="meaning">Instruction to buy or sell immediately at market price.</div></div>
+  <div class="card"><div class="term">Limit Order</div><div class="meaning">Instruction to buy or sell at a specific price.</div></div>
+  <div class="card"><div class="term">Stop Loss</div><div class="meaning">Automatic order placed to limit potential losses.</div></div>
+  <div class="card"><div class="term">Take Profit</div><div class="meaning">Automatic order used to secure profits at a target price.</div></div>
+  <div class="card"><div class="term">Volume</div><div class="meaning">Total number of shares traded during a period.</div></div>
+  <div class="card"><div class="term">Liquidity</div><div class="meaning">Ease of buying or selling without affecting market price.</div></div>
+  <div class="card"><div class="term">Volatility</div><div class="meaning">Degree of price fluctuation in a security.</div></div>
+  <div class="card"><div class="term">Bull Market</div><div class="meaning">Market condition where prices are generally rising.</div></div>
+  <div class="card"><div class="term">Bear Market</div><div class="meaning">Market condition where prices are generally falling.</div></div>
+  <div class="card"><div class="term">Index</div><div class="meaning">Group of stocks used to measure market performance.</div></div>
+  <div class="card"><div class="term">KSE-100 Index</div><div class="meaning">Benchmark index of Pakistan Stock Exchange.</div></div>
+  <div class="card"><div class="term">Equity</div><div class="meaning">Ownership interest in a company through shares.</div></div>
+  <div class="card"><div class="term">Share</div><div class="meaning">Small unit representing ownership in a company.</div></div>
+  <div class="card"><div class="term">Dividend</div><div class="meaning">Portion of company profit paid to shareholders.</div></div>
+  <div class="card"><div class="term">Dividend Yield</div><div class="meaning">Dividend income expressed as a percentage of price.</div></div>
+  <div class="card"><div class="term">Capital Gain</div><div class="meaning">Profit earned by selling an asset at a higher price.</div></div>
+  <div class="card"><div class="term">Capital Loss</div><div class="meaning">Loss incurred by selling an asset at a lower price.</div></div>
+  <div class="card"><div class="term">Market Capitalization</div><div class="meaning">Total market value of a company’s outstanding shares.</div></div>
+  <div class="card"><div class="term">Blue Chip Stock</div><div class="meaning">Shares of large, stable, and reputable companies.</div></div>
+  <div class="card"><div class="term">Price-Earnings Ratio (P/E)</div><div class="meaning">Share price divided by earnings per share.</div></div>
+  <div class="card"><div class="term">Earnings Per Share (EPS)</div><div class="meaning">Company profit allocated per outstanding share.</div></div>
+  <div class="card"><div class="term">Book Value</div><div class="meaning">Net asset value of a company as per records.</div></div>
+  <div class="card"><div class="term">IPO</div><div class="meaning">Initial Public Offering of shares to the public.</div></div>
+  <div class="card"><div class="term">Rights Issue</div><div class="meaning">Offer to existing shareholders to buy new shares.</div></div>
+  <div class="card"><div class="term">Bonus Shares</div><div class="meaning">Free additional shares issued to shareholders.</div></div>
+  <div class="card"><div class="term">Face Value</div><div class="meaning">Nominal value printed on a share certificate.</div></div>
+  <div class="card"><div class="term">Free Float</div><div class="meaning">Shares available for public trading.</div></div>
+  <div class="card"><div class="term">Broker</div><div class="meaning">Licensed intermediary executing trades for investors.</div></div>
+  <div class="card"><div class="term">CDC</div><div class="meaning">Central Depository Company holding electronic shares.</div></div>
+  <div class="card"><div class="term">NCCPL</div><div class="meaning">Entity responsible for clearing and settlement.</div></div>
+  <div class="card"><div class="term">Settlement</div><div class="meaning">Completion of cash and share exchange.</div></div>
+  <div class="card"><div class="term">T+2 Settlement</div><div class="meaning">Trade settles two business days after execution.</div></div>
+  <div class="card"><div class="term">Margin Trading</div><div class="meaning">Trading using borrowed funds.</div></div>
+  <div class="card"><div class="term">Collateral</div><div class="meaning">Asset pledged to secure borrowing.</div></div>
+  <div class="card"><div class="term">Leverage</div><div class="meaning">Use of borrowed money to increase exposure.</div></div>
+  <div class="card"><div class="term">Short Selling</div><div class="meaning">Selling borrowed shares expecting price decline.</div></div>
+  <div class="card"><div class="term">Hedging</div><div class="meaning">Strategy used to reduce investment risk.</div></div>
+  <div class="card"><div class="term">Diversification</div><div class="meaning">Spreading investments to reduce overall risk.</div></div>
+  <div class="card"><div class="term">Portfolio</div><div class="meaning">Collection of an investor’s financial assets.</div></div>
+  <div class="card"><div class="term">Risk Tolerance</div><div class="meaning">Ability to handle investment losses.</div></div>
+  <div class="card"><div class="term">Return</div><div class="meaning">Profit or loss from an investment.</div></div>
+  <div class="card"><div class="term">Yield</div><div class="meaning">Income generated from an investment.</div></div>
+  <div class="card"><div class="term">Bond</div><div class="meaning">Debt instrument issued by company or government.</div></div>
+  <div class="card"><div class="term">Coupon</div><div class="meaning">Interest payment on a bond.</div></div>
+  <div class="card"><div class="term">Maturity</div><div class="meaning">Date when bond principal is repaid.</div></div>
+  <div class="card"><div class="term">Mutual Fund</div><div class="meaning">Professionally managed investment pool.</div></div>
+  <div class="card"><div class="term">NAV</div><div class="meaning">Net Asset Value per unit of a fund.</div></div>
+  </div>
+  <footer class="nx-footer">
+  <div class="nx-foot-wrap">
+  <div class="nx-foot-grid">
+  <div class="nx-foot-col">
+  <h4>WHY US</h4>
+  <a href="about.html">About Us</a>
+  <a href="BOARD of directors.html">Board / Management</a>
+  <a href="Mission.html">Mission &amp; Vision</a>
+  </div>
+  <div class="nx-foot-col">
+  <h4>EDUCATION</h4>
+  <a href="New to trading.html">New to Trading</a>
+  <a href="Investorguid.html">Investor Guide</a>
+  <a href="Glossary.html">Glossary</a>
+  </div>
+  <div class="nx-foot-col">
+  <h4>ACCOUNT</h4>
+  <a href="Rda.html">Roshan Digital Account</a>
+  <a href="Acoocint opening.html">Open Digital Account</a>
+  <a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+  </div>
+  <div class="nx-foot-col">
+  <h4>CONTACT</h4>
+  <a href="mailto:info@stoxgear.com.pk">info@stoxgear.com.pk</a>
+  <a href="tel:0913168395">091-3168395</a>
+  <a href="#">Peshawar, Pakistan</a>
+  </div>
+  </div>
+  <div class="nx-foot-bottom">
+        © <script>document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) Limited
+      </div>
+  </div>
+  </footer>
+  <script>
+  /* MOBILE NAV + DROPDOWN TAP (UPGRADED) */
+  (function(){
+    const header = document.getElementById('nxHeader');
+    const menu   = document.getElementById('nxMenu');
+    const toggle = document.getElementById('nxToggle');
+    if(!header || !menu || !toggle) return;
+  
+    const isMobile = () => window.matchMedia("(max-width:1024px)").matches;
+  
+    function closeMenu(){
+      header.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('nav-locked');
+      menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
     }
-    
-    /* HERO & CTA: full width buttons on small phones */
-    @media (max-width:540px){
-      .btn{ width:100%; justify-content:center; }
-      .hero__inner{ gap:18px; }
-      .hero p{ font-size:15px; }
+    function openMenu(){
+      header.classList.add('is-open');
+      toggle.setAttribute('aria-expanded','true');
+      document.body.classList.add('nav-locked');
     }
-    
-    /* Ticker: slower on mobile + pause on touch/hover */
-    @media (max-width:540px){
-      .ticker__row{ animation-duration:42s !important; }
-    }
-    .ticker:hover .ticker__row,
-    .ticker:active .ticker__row{
-      animation-play-state: paused;
-    }
-    
-    /* lock background scroll when menu open (JS syncs this class) */
-    body.nav-locked{
-      overflow:hidden;
-      touch-action:none;
-    }
-    /* === END MOBILE_RESPONSIVE_PATCH v1 === */
-  </style>
-<link href="assets/stoxgear-pro.css" rel="stylesheet"/>  <link rel="stylesheet" href="assets/cm-enhance.css">
-  <link rel="stylesheet" href="assets/stoxgear-cinema.css">
-</head>
-<body data-page="glossary.html">
-<header class="nx-navbar" id="nxHeader">
-<div class="nx-nav-inner">
-<a aria-label="StoxGear Home" class="nx-brand" href="index.html">
-<img alt="StoxGear" class="nx-logo" src="stoxgear-logo.jpg"/>
-<img alt="Partner" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
-</a>
-<div class="nx-grow"></div>
-<nav aria-label="Primary navigation" class="nx-menu" id="nxMenu">
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-why" href="#">Why Us</a>
-<div class="nx-drop" id="dd-why">
-<a href="about.html">About Us</a>
-<a href="BOARD of directors.html">Board / Management</a>
-<a href="Mission.html">Mission &amp; Vision</a>
-<a href="associated companies.html">Associated Companies</a>
-<a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
-<a href="services.html">Services</a>
-<a href="Registered agents..html">Registered Agents</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-edu" href="#">Education</a>
-<div class="nx-drop" id="dd-edu">
-<a href="New to trading.html">New to Trading</a>
-<a href="Investorguid.html">Investor Guide</a>
-<a href="Glossary.html">Glossary</a>
-<a href="psx-rule-book.html">PSX Rule Book</a>
-<a href="common-terms-share-market.html">Common Terms of Share Market</a>
-<a href="online-order-execution-flow.html">Order Execution Flow</a>
-<a href="order-settlement-flow.html">Order Settlement Flow</a>
-<a href="arbitration-procedure.html">Arbitration Procedure</a>
-<a href="risk-disclosure-document.html">Risk Disclosure Document</a>
-<a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
-<a href="faqs.html">FAQs</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-open" href="#">Open Account</a>
-<div class="nx-drop" id="dd-open">
-<a href="Rda.html">Roshan Digital Account</a>
-<a href="Acoocint opening.html">Open Digital Account</a>
-<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-dl" href="#">Downloads</a>
-<div class="nx-drop" id="dd-dl">
-<a href="Forms.html">Forms</a>
-<a href="software.html">Software</a>
-<a href="Annaual half yearly.html">Financial Statements</a>
-<a href="KYC poslicy.html">CDD / KYC Policy</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-sup" href="#">Support</a>
-<div class="nx-drop" id="dd-sup">
-<a href="investor complaint.html">Investor Complaint</a>
-<a href="Pending investor complaun.html">Pending Complaints</a>
-<a href="Penal action.html">Penal Action</a>
-<a href="Secp complaint.html">SECP Complaint</a>
-<a href="psx complaint.html">PSX Complaint</a>
-<a href="UIs of NICCPL.html">UIS Services</a>
-<a href="Eservices By CDC.html">EServices by CDC</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" href="Contact.html">Contact</a>
-</div>
-</nav>
-<button class="nx-cta" type="button">OPEN AN ACCOUNT</button>
-<button aria-expanded="false" aria-label="Open menu" class="nx-toggle" id="nxToggle">☰</button>
-</div>
-</header>
-<h1>Investment Glossary</h1>
-<div class="search-bar">
-<input id="searchInput" placeholder="Search a term..."/>
-</div>
-<div class="grid" id="glossaryGrid">
-<!-- 60 glossary cards -->
-<div class="card"><div class="term">Ask Price</div><div class="meaning">Lowest price at which a seller is willing to sell a share.</div></div>
-<div class="card"><div class="term">Bid Price</div><div class="meaning">Highest price a buyer is willing to pay for a share.</div></div>
-<div class="card"><div class="term">Spread</div><div class="meaning">Difference between the bid price and ask price.</div></div>
-<div class="card"><div class="term">Market Order</div><div class="meaning">Instruction to buy or sell immediately at market price.</div></div>
-<div class="card"><div class="term">Limit Order</div><div class="meaning">Instruction to buy or sell at a specific price.</div></div>
-<div class="card"><div class="term">Stop Loss</div><div class="meaning">Automatic order placed to limit potential losses.</div></div>
-<div class="card"><div class="term">Take Profit</div><div class="meaning">Automatic order used to secure profits at a target price.</div></div>
-<div class="card"><div class="term">Volume</div><div class="meaning">Total number of shares traded during a period.</div></div>
-<div class="card"><div class="term">Liquidity</div><div class="meaning">Ease of buying or selling without affecting market price.</div></div>
-<div class="card"><div class="term">Volatility</div><div class="meaning">Degree of price fluctuation in a security.</div></div>
-<div class="card"><div class="term">Bull Market</div><div class="meaning">Market condition where prices are generally rising.</div></div>
-<div class="card"><div class="term">Bear Market</div><div class="meaning">Market condition where prices are generally falling.</div></div>
-<div class="card"><div class="term">Index</div><div class="meaning">Group of stocks used to measure market performance.</div></div>
-<div class="card"><div class="term">KSE-100 Index</div><div class="meaning">Benchmark index of Pakistan Stock Exchange.</div></div>
-<div class="card"><div class="term">Equity</div><div class="meaning">Ownership interest in a company through shares.</div></div>
-<div class="card"><div class="term">Share</div><div class="meaning">Small unit representing ownership in a company.</div></div>
-<div class="card"><div class="term">Dividend</div><div class="meaning">Portion of company profit paid to shareholders.</div></div>
-<div class="card"><div class="term">Dividend Yield</div><div class="meaning">Dividend income expressed as a percentage of price.</div></div>
-<div class="card"><div class="term">Capital Gain</div><div class="meaning">Profit earned by selling an asset at a higher price.</div></div>
-<div class="card"><div class="term">Capital Loss</div><div class="meaning">Loss incurred by selling an asset at a lower price.</div></div>
-<div class="card"><div class="term">Market Capitalization</div><div class="meaning">Total market value of a company’s outstanding shares.</div></div>
-<div class="card"><div class="term">Blue Chip Stock</div><div class="meaning">Shares of large, stable, and reputable companies.</div></div>
-<div class="card"><div class="term">Price-Earnings Ratio (P/E)</div><div class="meaning">Share price divided by earnings per share.</div></div>
-<div class="card"><div class="term">Earnings Per Share (EPS)</div><div class="meaning">Company profit allocated per outstanding share.</div></div>
-<div class="card"><div class="term">Book Value</div><div class="meaning">Net asset value of a company as per records.</div></div>
-<div class="card"><div class="term">IPO</div><div class="meaning">Initial Public Offering of shares to the public.</div></div>
-<div class="card"><div class="term">Rights Issue</div><div class="meaning">Offer to existing shareholders to buy new shares.</div></div>
-<div class="card"><div class="term">Bonus Shares</div><div class="meaning">Free additional shares issued to shareholders.</div></div>
-<div class="card"><div class="term">Face Value</div><div class="meaning">Nominal value printed on a share certificate.</div></div>
-<div class="card"><div class="term">Free Float</div><div class="meaning">Shares available for public trading.</div></div>
-<div class="card"><div class="term">Broker</div><div class="meaning">Licensed intermediary executing trades for investors.</div></div>
-<div class="card"><div class="term">CDC</div><div class="meaning">Central Depository Company holding electronic shares.</div></div>
-<div class="card"><div class="term">NCCPL</div><div class="meaning">Entity responsible for clearing and settlement.</div></div>
-<div class="card"><div class="term">Settlement</div><div class="meaning">Completion of cash and share exchange.</div></div>
-<div class="card"><div class="term">T+2 Settlement</div><div class="meaning">Trade settles two business days after execution.</div></div>
-<div class="card"><div class="term">Margin Trading</div><div class="meaning">Trading using borrowed funds.</div></div>
-<div class="card"><div class="term">Collateral</div><div class="meaning">Asset pledged to secure borrowing.</div></div>
-<div class="card"><div class="term">Leverage</div><div class="meaning">Use of borrowed money to increase exposure.</div></div>
-<div class="card"><div class="term">Short Selling</div><div class="meaning">Selling borrowed shares expecting price decline.</div></div>
-<div class="card"><div class="term">Hedging</div><div class="meaning">Strategy used to reduce investment risk.</div></div>
-<div class="card"><div class="term">Diversification</div><div class="meaning">Spreading investments to reduce overall risk.</div></div>
-<div class="card"><div class="term">Portfolio</div><div class="meaning">Collection of an investor’s financial assets.</div></div>
-<div class="card"><div class="term">Risk Tolerance</div><div class="meaning">Ability to handle investment losses.</div></div>
-<div class="card"><div class="term">Return</div><div class="meaning">Profit or loss from an investment.</div></div>
-<div class="card"><div class="term">Yield</div><div class="meaning">Income generated from an investment.</div></div>
-<div class="card"><div class="term">Bond</div><div class="meaning">Debt instrument issued by company or government.</div></div>
-<div class="card"><div class="term">Coupon</div><div class="meaning">Interest payment on a bond.</div></div>
-<div class="card"><div class="term">Maturity</div><div class="meaning">Date when bond principal is repaid.</div></div>
-<div class="card"><div class="term">Mutual Fund</div><div class="meaning">Professionally managed investment pool.</div></div>
-<div class="card"><div class="term">NAV</div><div class="meaning">Net Asset Value per unit of a fund.</div></div>
-</div>
-<footer class="nx-footer">
-<div class="nx-foot-wrap">
-<div class="nx-foot-grid">
-<div class="nx-foot-col">
-<h4>WHY US</h4>
-<a href="about.html">About Us</a>
-<a href="BOARD of directors.html">Board / Management</a>
-<a href="Mission.html">Mission &amp; Vision</a>
-</div>
-<div class="nx-foot-col">
-<h4>EDUCATION</h4>
-<a href="New to trading.html">New to Trading</a>
-<a href="Investorguid.html">Investor Guide</a>
-<a href="Glossary.html">Glossary</a>
-</div>
-<div class="nx-foot-col">
-<h4>ACCOUNT</h4>
-<a href="Rda.html">Roshan Digital Account</a>
-<a href="Acoocint opening.html">Open Digital Account</a>
-<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
-</div>
-<div class="nx-foot-col">
-<h4>CONTACT</h4>
-<a href="mailto:info@stoxgear.com.pk">info@stoxgear.com.pk</a>
-<a href="tel:0913168395">091-3168395</a>
-<a href="#">Peshawar, Pakistan</a>
-</div>
-</div>
-<div class="nx-foot-bottom">
-      © <script>document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) Limited
-    </div>
-</div>
-</footer>
-<script>
-/* MOBILE NAV + DROPDOWN TAP (UPGRADED) */
-(function(){
-  const header = document.getElementById('nxHeader');
-  const menu   = document.getElementById('nxMenu');
-  const toggle = document.getElementById('nxToggle');
-  if(!header || !menu || !toggle) return;
-
-  const isMobile = () => window.matchMedia("(max-width:1024px)").matches;
-
-  function closeMenu(){
-    header.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-    document.body.classList.remove('nav-locked');
-    menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
-  }
-  function openMenu(){
-    header.classList.add('is-open');
-    toggle.setAttribute('aria-expanded','true');
-    document.body.classList.add('nav-locked');
-  }
-
-  toggle.addEventListener('click', ()=>{
-    const open = header.classList.contains('is-open');
-    if(open) closeMenu(); else openMenu();
-  });
-
-  // Dropdown tap on mobile
-  menu.addEventListener('click', (e)=>{
-    const link = e.target.closest('.nx-link');
-    if(!link) return;
-
-    const mobile = isMobile();
-    const hasDataDd = link.hasAttribute('data-dd') || link.getAttribute('data-dd');
-    const next = link.nextElementSibling;
-    const hasDrop = next && next.classList && next.classList.contains('nx-drop');
-
-    if(mobile && (hasDataDd || hasDrop)){
-      e.preventDefault();
-      const item = link.closest('.nx-item');
-      if(!item) return;
-      menu.querySelectorAll('.nx-item.open').forEach(i => { if(i !== item) i.classList.remove('open'); });
-      item.classList.toggle('open');
-    }
-  });
-
-  // click outside closes
-  document.addEventListener('click', (e)=>{
-    if(!isMobile()) return;
-    if(!header.contains(e.target)) closeMenu();
-  });
-
-  // resizing to desktop resets
-  window.addEventListener('resize', ()=>{
-    if(!isMobile()) closeMenu();
-  }, {passive:true});
-})();
-/* Search */
-const searchInput = document.getElementById("searchInput");
-searchInput.addEventListener("keyup",()=>{
-  const t = searchInput.value.toLowerCase();
-  document.querySelectorAll("#glossaryGrid .card").forEach(c=>{
-    c.style.display = c.innerText.toLowerCase().includes(t) ? "" : "none";
-  });
-});
-
-/* Device detection */
-(function(){
-  const root = document.documentElement;
-  function detect(){
-    const coarse = window.matchMedia("(pointer: coarse)").matches;
-    const small  = window.matchMedia("(max-width: 768px)").matches;
-    const uaMob  = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isMobile = coarse || small || uaMob;
-    root.classList.toggle("is-mobile", isMobile);
-    root.classList.toggle("is-desktop", !isMobile);
-  }
-  detect();
-  window.addEventListener("resize", detect, {passive:true});
-})();
-
-/* Reveal animation */
-(function(){
-  const cards = document.querySelectorAll("#glossaryGrid .card");
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(ent=>{
-      if(ent.isIntersecting){
-        ent.target.classList.add("show");
-        io.unobserve(ent.target);
+  
+    toggle.addEventListener('click', ()=>{
+      const open = header.classList.contains('is-open');
+      if(open) closeMenu(); else openMenu();
+    });
+  
+    // Dropdown tap on mobile
+    menu.addEventListener('click', (e)=>{
+      const link = e.target.closest('.nx-link');
+      if(!link) return;
+  
+      const mobile = isMobile();
+      const hasDataDd = link.hasAttribute('data-dd') || link.getAttribute('data-dd');
+      const next = link.nextElementSibling;
+      const hasDrop = next && next.classList && next.classList.contains('nx-drop');
+  
+      if(mobile && (hasDataDd || hasDrop)){
+        e.preventDefault();
+        const item = link.closest('.nx-item');
+        if(!item) return;
+        menu.querySelectorAll('.nx-item.open').forEach(i => { if(i !== item) i.classList.remove('open'); });
+        item.classList.toggle('open');
       }
     });
-  }, {threshold:.15});
-  cards.forEach(c=>io.observe(c));
-})();
-</script>
-<script>
-// === MOBILE_RESPONSIVE_PATCH v1 (do not remove) ===
-(function(){
-  const header = document.getElementById('nxHeader');
-  const toggle = document.getElementById('nxToggle');
-  const menu   = document.getElementById('nxMenu');
-  if(!header) return;
-
-  const isMobile = () => window.matchMedia && window.matchMedia('(max-width:1024px)').matches;
-
-  // Sync body lock with menu open state (does NOT toggle, only sync)
-  const syncLock = () => {
-    const open = header.classList.contains('is-open') && isMobile();
-    document.body.classList.toggle('nav-locked', open);
-  };
-
-  // after any toggle click, sync lock
-  if(toggle){
-    toggle.addEventListener('click', ()=> setTimeout(syncLock, 0));
-  }
-
-  // close menu if switching to desktop width
-  window.addEventListener('resize', ()=>{
-    if(!isMobile()){
-      header.classList.remove('is-open');
-      document.body.classList.remove('nav-locked');
-      toggle && toggle.setAttribute('aria-expanded','false');
-      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
-    }else{
-      syncLock();
-    }
-  }, {passive:true});
-
-  // click outside closes on mobile (if page doesn't already)
-  document.addEventListener('click', (e)=>{
-    if(!isMobile()) return;
-    if(!header.contains(e.target)){
-      header.classList.remove('is-open');
-      document.body.classList.remove('nav-locked');
-      toggle && toggle.setAttribute('aria-expanded','false');
-      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
-    }
+  
+    // click outside closes
+    document.addEventListener('click', (e)=>{
+      if(!isMobile()) return;
+      if(!header.contains(e.target)) closeMenu();
+    });
+  
+    // resizing to desktop resets
+    window.addEventListener('resize', ()=>{
+      if(!isMobile()) closeMenu();
+    }, {passive:true});
+  })();
+  /* Search */
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("keyup",()=>{
+    const t = searchInput.value.toLowerCase();
+    document.querySelectorAll("#glossaryGrid .card").forEach(c=>{
+      c.style.display = c.innerText.toLowerCase().includes(t) ? "" : "none";
+    });
   });
-
-  // initial
-  syncLock();
-})();
-// === END MOBILE_RESPONSIVE_PATCH v1 ===
+  
+  /* Device detection */
+  (function(){
+    const root = document.documentElement;
+    function detect(){
+      const coarse = window.matchMedia("(pointer: coarse)").matches;
+      const small  = window.matchMedia("(max-width: 768px)").matches;
+      const uaMob  = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isMobile = coarse || small || uaMob;
+      root.classList.toggle("is-mobile", isMobile);
+      root.classList.toggle("is-desktop", !isMobile);
+    }
+    detect();
+    window.addEventListener("resize", detect, {passive:true});
+  })();
+  
+  /* Reveal animation */
+  (function(){
+    const cards = document.querySelectorAll("#glossaryGrid .card");
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          ent.target.classList.add("show");
+          io.unobserve(ent.target);
+        }
+      });
+    }, {threshold:.15});
+    cards.forEach(c=>io.observe(c));
+  })();
   </script>
-
-  <script defer src="assets/cm-enhance.js"></script>
-  <script defer src="assets/stoxgear-cinema.js"></script>
-</body>
-</html>
+  <script>
+  // === MOBILE_RESPONSIVE_PATCH v1 (do not remove) ===
+  (function(){
+    const header = document.getElementById('nxHeader');
+    const toggle = document.getElementById('nxToggle');
+    const menu   = document.getElementById('nxMenu');
+    if(!header) return;
+  
+    const isMobile = () => window.matchMedia && window.matchMedia('(max-width:1024px)').matches;
+  
+    // Sync body lock with menu open state (does NOT toggle, only sync)
+    const syncLock = () => {
+      const open = header.classList.contains('is-open') && isMobile();
+      document.body.classList.toggle('nav-locked', open);
+    };
+  
+    // after any toggle click, sync lock
+    if(toggle){
+      toggle.addEventListener('click', ()=> setTimeout(syncLock, 0));
+    }
+  
+    // close menu if switching to desktop width
+    window.addEventListener('resize', ()=>{
+      if(!isMobile()){
+        header.classList.remove('is-open');
+        document.body.classList.remove('nav-locked');
+        toggle && toggle.setAttribute('aria-expanded','false');
+        menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
+      }else{
+        syncLock();
+      }
+    }, {passive:true});
+  
+    // click outside closes on mobile (if page doesn't already)
+    document.addEventListener('click', (e)=>{
+      if(!isMobile()) return;
+      if(!header.contains(e.target)){
+        header.classList.remove('is-open');
+        document.body.classList.remove('nav-locked');
+        toggle && toggle.setAttribute('aria-expanded','false');
+        menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
+      }
+    });
+  
+    // initial
+    syncLock();
+  })();
+  // === END MOBILE_RESPONSIVE_PATCH v1 ===
+    </script>
+  
+    
+    <script defer src="assets/stoxgear-cinema.js"></script>
+  </body>
+  </html>
