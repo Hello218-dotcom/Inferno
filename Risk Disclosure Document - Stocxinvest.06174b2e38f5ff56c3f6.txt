@@ -1,0 +1,310 @@
+                                                "ANNEXURE A"
+
+                                    RISK DISCLOSURE DOCUMENT
+
+                     (TO BE GIVEN BY THE BROKERS TO THEIR CUSTOMERS)
+
+This Risk Disclosure document is prescribed by the Pakistan Stock Exchange Limited (PSX) under Clause 13(1) of
+the Securities Broker (Licensing and Operations) Regulations, 2016.
+
+This document contains important information relating to various types of risks associated with trading and
+investment in financial products (equity securities, fixed income instruments, derivatives contracts etc.) being
+traded at PSX. The customers should carefully read this document before opening trading account with a broker.
+
+ In case a customer suffers negative consequences or losses as a result of trading/investment, he/she shall be
+solely responsible for the same and PSX or Securities and Exchange Commission of Pakistan (SECP) shall not be
+held responsible/liable, in any manner whatsoever, for such negative consequences or losses.
+
+The customers must acknowledge and accept that there can be no guaranteed profit or guaranteed return on
+their invested capital and under no circumstances a broker can provide customers such guarantee or fixed return
+on their investment in view of the fact that the prices of securities and futures contract can fall as well as rise
+depending on the market conditions and performance of the companies. Customers must understand that past
+performance is not a guide to future performance of the securities, contracts or market as a whole. In case the
+customers have any doubt or are unclear as to the risks/information disclosed in this document, PSX strongly
+recommends that such customer should seek an independent legal or financial advice in advance.
+
+PSX neither singly or jointly and expressly nor impliedly guarantee nor make any representation concerning the
+completeness, accuracy and adequacy of the information contained in this document as this document discloses
+the risks and other significant aspects of trading/investment at the minimum level. PSX does not provide or
+purport to provide any advice and shall not be liable to any person who enters into a business relationship with
+a broker based on any information contained in this document. Any information contained in this document must
+not be construed as business/investment advice in any manner whatsoever.
+
+THE CUSTOMERS MUST BE AWARE OF AND ACQUAINTED WITH THE FOLLOWING:
+
+1. BASIC RISKS INVOLVED IN TRADING IN SECURITIES MARKET:
+
+1.1 VOLATILITY RISK:
+
+Volatility risk is the risk of changes in the value of financial product in any direction. High volatility generally
+means that the values of securities/contracts can undergo dramatic upswings and/or downswings during a short
+period. Such a high volatility can be expected relatively more in illiquid or less frequently traded
+securities/contracts than in liquid or more frequently traded one. Due to volatility, the order of a customer may
+not be executed or only partially executed due to rapid change in the market prices. Such volatility can also
+cause price uncertainty of the market orders as the price at which the order is executed can be substantially
+different from the last available market price or may change significantly thereafter, resulting in a real or
+notional loss.
+
+1.2 LIQUIDITY RISK:
+
+Liquidity refers to the ability of market participants to buy and/or sell securities expeditiously at a competitive
+price and with minimal price difference. Generally, it is assumed that more the numbers of orders available in
+ci market, greater is the liquidity. Liquidity is important because with greater liquidity, it is easier for customers
+to buy and/or sell securities swiftly and with minimal price difference and, as a result, customers are more likely
+to pay or receive a competitive price for their executed trades. Generally, lower liquidity can be expected in
+
+
+
+                                                     Page 1 of 5
+                                                                                                          A/
+thinly traded instruments than in liquid or more frequently traded ones. As a result, order of customer may only
+be partially executed, or may be executed with relatively greater price difference or may not be executed at
+all. Under certain market conditions, it may be difficult or impossible for the customers to liquidate a position in
+the market at a reasonable price, when there are no outstanding orders either on the buy side or on the sell
+side, or if trading is halted in a security/contract due to any reason.
+
+
+1.3 SPECULATIVE TRADING RISK:
+
+Speculation involves trading of a security/contract with the expectation that it will become more valuable in a
+very near future. These transactions are attempted to make profit from fluctuations in the market value of
+securities, rather than fundamental value of a security and/or underlying attributes embodied in the securities
+such as dividends, bonus or any other factor(s) materially affecting the price.
+
+
+Speculative trading results in an uncertain degree of gain or loss. Almost all investment activities involve
+speculative risks to some extent, as a customer has no idea whether an investment will be a blazing success or
+an utter failure.
+
+Day trading strategy is a common example of speculative trading in which customers buy and sell the same
+security/derivative within the same day, such that all obligations are netted off and closed and no settlement
+obligations stand. The customer indulging in a day-trading strategy needs to be more vigilant and informed
+than the customers investing for a longer period, as market may not move during the day as the day-trader
+originally anticipated, resulting in a loss to them.
+
+
+1.4 RISK OF WIDER SPREAD:
+
+The Bid-Ask spread is the difference between the offer price and bid price of a security/contract quoted by
+the Market Makers or trading parties. The size of spread is affected by a number of factors such as liquidity,
+volatility, free float (the total number of shares outstanding that are readily available for trading) etc.
+Generally, low liquidity, high volatility and low free float levels of a security may result in relatively wider Bid-
+Ask Spread. The higher Bid-Ask spread can result in greater cost to customers.
+
+1.5 RISK PERTAINING TO THE PRICE FLUCTUATIONS DUE TO CORPORATE ANNOUNCEMENT:
+
+The corporate announcements by the issuers for the corporate actions or any other material information may
+affect the price of the securities. These announcements combined with relatively lower liquidity of the security
+may result in significant price volatility. The customers, while making any investment decision in such
+securities/contracts, are advised to take into account such announcements. Moreover, the customers should be
+cautious and vigilant in case fake rumors are circulating in the market. The Customers are advised to refrain
+from acting purely based on such rumors rather take well informed investment decision in light of all facts and
+circumstances associated with such securities and their issuers.
+
+
+1.6 RISK REDUCING ORDERS:
+
+The customers can place orders for limiting the losses to certain amounts, such as Limit Orders, Stop Loss Orders,
+and Market Orders etc. Customers must ask their brokers for detailed understanding of these order types.
+Customers must acknowledge that placement of such orders for limiting losses to certain extent may not always
+be an effective tool due to rapid movements in the prices of securities and, as a result, such orders may not be
+executed.
+
+1.7 SYSTEM RISK:
+
+High volume trading will frequently occur at the market opening and before market close. Such high volumes
+may also occur at any point in the day causing delay in order execution or confirmation. During periods of
+volatility, on account of market participants continuously modifying their order quantity or prices or placing
+fresh orders, there may be delays in order execution and its confirmations.
+
+
+
+                                                       Page 2 of 5
+
+
+
+
+                                                                                                         A/
+1.8 SYSTEMIC RISK:
+
+
+Systemic risk arises in exceptional circumstances and is the risk that the inability of one or more market
+participants to perform as expected will cause other participants to be unable to meet their obligations when
+due, thereby affecting the entire capital market.
+
+
+1.9 SYSTEM AND NETWORKING RISK:
+
+
+Trading on the PSX is done electronically, based on satellite/leased line based communications, combination of
+technologies and computer systems to place and route orders. All these facilities and systems are vulnerable to
+temporary disruption or failure, or any such other problem/glitch, which may lead to failure to establish access
+to the trading system/network. Such limitation may result in delay in processing or processing of buy or sell
+orders in part only or non-processing of orders at all. As with any financial transaction, the customer may
+experience losses if orders cannot be executed normally due to systems failures on the part of exchange or
+broker. The losses may be greater if the broker having customers' position does not have adequate back-up
+systems or procedures. Accordingly, the Customers are cautioned to note that although these problems may be
+temporary in nature, but when the customers have outstanding open positions or unexecuted orders, these
+limitations represent a risk because of obligations to settle all executed transactions.
+
+1.10 RISK OF ONLINE SERVICES:
+
+The customers who trade or intend to trade online should fully understand the potential risks associated with
+online trading. Online trading may not be completely secure and reliable and may cause delay in transmitting
+information, execution of instructions due to technological barriers. Moreover, the customer acknowledges and
+fully understands that he/she shall be solely responsible for any consequences arising from disclosure of the
+access codes and/or passwords to any third person or any unauthorized use of the access codes and/or
+passwords.
+
+1.11 REGULATORY/LEGAL RISK:
+
+Government policies, rules, regulations, and procedures governing trading on the exchange are updated from
+time to time. Such regulatory actions and changes in the legal/regulatory ecosystem including but not limited to
+changes in tax/levies may alter the potential profit of an investment. Some policies of the government may be
+focused more on some sectors than others thereby affecting the risk and return profile of the investment of the
+customers in those sectors.
+
+2. RISKS IN DERIVATIVE AND LEVERAGE PRODUCTS:
+
+
+Derivative and leveraged trades enable the customer to take larger exposure with smaller amount of investment
+as margin. Such trades carry high level of risk and the customers should carefully consider whether the trading
+in the derivative and leveraged products is suitable for them, as it may not be suitable for all customers. The
+higher the degree of leverage, the greater the possibility of profit or loss it can generate in comparison with
+the investment involving full amount. Therefore, the customers should trade in the derivative and leveraged
+products in light of their experiences, objectives, financial resources and other relevant circumstances.
+
+Derivative product namely Deliverable Futures Contract, Cash Settled Futures Contract, Stock Index Futures
+Contract and Index Options Contracts and leveraged products namely Margin Trading System, Margin
+Financing and Securities Lending and Borrowing are available for trading at stock exchange.
+
+
+The customer transacting in the derivative and leveraged markets needs to carefully review the agreement
+provided by the brokers and also thoroughly read and understand the specifications, terms and conditions which
+may include markup rate, risk disclosures etc. There are a number of additional risks that all customers need to
+consider while entering into derivative and leveraged market transactions. These risks include the following:
+
+
+
+
+                                                    Page 3of5
+(a) Trading in the derivative and leveraged markets involves risk and may result in potentially unlimited losses
+      that are greater than the amount deposited with the broker. As with any high risk financial product, the
+      customer should not risk any funds that the customer cannot afford to lose, such as retirement savings, medical
+      and other emergency funds, funds set aside for purposes such as education or home ownership, proceeds
+      from student loans or mortgages, or funds required to meet living expenses.
+(b) All derivative and leveraged trading involves risk, and there is no trading strategy that can eliminate it.
+      Strategies using combinations of positions, such as spreads, may be as risky as outright long or short
+      positions. Trading in equity futures contracts requires knowledge of both the securities and the futures
+      markets.
+(c) The customer needs to be cautious of claims of large profits from trading in such products. Although the high
+      degree of leverage can result in large and immediate gains, it can also result in large and immediate losses.
+( d) Because of the leverage involved and the nature of equity futures contract transactions, customer may feel
+      the effects of his/her losses immediately. The amount of initial margin is small relative to the value of the
+      futures contract so that transactions are 'leveraged' or 'geared'. A relatively small market movement will
+      have a proportionately larger impact on the funds the customer has deposited or will have to deposit. This
+      may work against customer as well as for him/her. Customer may sustain a total loss of initial margin funds
+      and any additional funds deposited with the broker to maintain his/her position. If the market moves against
+      his/her position or margin levels are increased, customer may be called upon to pay substantial additional
+      funds on short notice to maintain his/her position. If the customer fails to comply with a request/call for
+      additional funds within the time specified, his/her position may be liquidated/squared-up at a loss, and
+    customer will be liable for the loss, if any, in his/her account.
+(e) The customer may find it difficult or impossible to liquidate/square-up a position due to certain market
+    conditions. Generally, the customer enters into an offsetting transaction in order to liquidate/square-up a
+      position in a derivative or leverage contract or to limit the risk. If the customers cannot liquidate position,
+      they may not be able to realize a gain in the value on position or prevent losses from increasing. This
+      inability to liquidate could occur, for example, if trading is halted due to some emergency or unusual event
+      in either the equity futures contract or the underlying security, no trading due to imposition of circuit breaker
+      or system failure occurs on the part of exchange or at the broker carrying customers' position. Even if
+      customers can liquidate position, they may be forced to do so at a price that involves a large loss.
+(f)   Under certain market conditions, the prices of derivative contracts may not maintain their customary or
+      anticipated relationships to the prices of the underlying security. These pricing disparities could occur, for
+      example, when the market for the equity futures contract is illiquid, when the primary market for the
+      underlying security is closed, or when the reporting of transactions in the underlying security has been
+    delayed.
+(g) The customer may be required to settle certain futures contracts with physical delivery of the underlying
+    security. If the customer hold position in a physically settled equity futures contract until the end of the last
+    trading day prior to expiration, the customer shall be obligated to make or take delivery of the underlying
+    securities, which could involve additional costs. The customer should carefully review the settlement and
+    delivery conditions before entering into an equity futures contract.
+(h) Day trading strategies involving equity futures contracts and other products pose special risks. As with any
+    financial product, customers who seek to purchase and sell the same equity futures in the course of a day
+    to profit from intra-day price movements ("day traders") face a number of special risks, including substantial
+      commissions, exposure to leverage, and competition with professional traders. The customer should
+      thoroughly understand these risks and have appropriate experience before engaging in day trading. The
+      customer should obtain a clear explanation of all commission, fees and other charges for which he/she will
+      be liable. These charges will affect net profit (if any) or increase loss.
+
+3. GENERAL:
+
+3.1 ASSETS HELD WITH BROKERS:
+
+The customer should familiarize him/herself with the measures available for protecting from the risk of
+misappropriation or misuse of cash and securities held with the brokers. For such purpose, he/she may opt for
+UIN Information System (UIS) provided by National Clearing Company of Pakistan Limited (NCCPL). The
+customer should also provide correct mobile number/email address in order to receive SMS/e-Alerts services
+
+
+
+                                                      Page 4of5
+being provided by the NCCPL and Central Depository Company of Pakistan Limited (CDC) on each trade and
+movement of their securities.
+
+
+Moreover, the customers should be aware of the protections given to money and securities deposited with the
+brokers, particularly in the event of a default by such broker or the broker's insolvency or bankruptcy. The
+customer recognizes that in such default/insolvency/bankruptcy scenario, the customer may recover his/her
+money and/or property to such extent as may be governed by relevant PSX Regulations and/or local laws in
+force from time to time.
+
+3.2 CUSTOMERS RIGHTS AND OBLIGATIONS:
+
+
+The customer must understand their rights and obligations as well as the rights and obligations of the brokers
+specified under the PSX Regulations and the Standardized Account Opening Form, Know Your Client Form,
+Standardized Sub-Account Opening Form of CDC, and Agreement(s) of Leveraged Products (Margin Trading
+System, Margin Financing and Securities Lending and Borrowing), where applicable, and any other applicable
+Rules, Regulations, Guidelines, Circulars etc. as may be issued by SECP and PSX from time to time.
+
+
+(a) The customers should ensure that they deal through the registered branch and with the registered
+    Agents/Traders/Representatives of the broker. The customer shall also verify such details from the website
+    of PSX and Jamapunji (www.jamapunji.pk );
+(b) Customer at the time of establishing relationship with the brokers, should obtain a clear explanation of all
+    brokerage, commission, fees and other charges for which customer will be liable to pay and these charges
+    will affect net cash inflow or outflow;
+(c) It is obligatory for the brokers to issue contract note, in either electronic form or hard copy, by next working
+    day of trading. The contract note shall contain all information relating to trade execution including
+    commission and charges applicable on the customers. In case contract note is not issued, customer should
+    inquire with broker immediately and in case the matter is not resolved, the same should be reported to the
+    PSX;
+(d) The customers should match the information as per the contract notes with the SMS/e-Alert received from
+    CDC and/or NCCPL and may also verify from the UIS facility from the website of NCCPL.
+
+
+
+                                               UNDERTAKING
+
+I, the customer, hereby acknowledge that I have received this Risk Disclosure Document and have read and
+understood the nature of all risks and other contents and information provided in this document.
+
+
+
+
+Date
+
+
+
+
+Signature of Broker                                            Signature of Account Holder
+
+
+
+
+                                                             Signature of Joint Account Holder
+
+
+
+
+                                                    Page 5 of 5
+
