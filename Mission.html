@@ -9,6 +9,45 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
+    .mission-vision-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.vision-box{
+  animation:visionFloat 4s ease-in-out infinite;
+}
+
+.vision-img-wrap{
+  margin-top:20px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+
+.vision-img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:transform .5s ease;
+}
+
+.vision-box:hover .vision-img{
+  transform:scale(1.05);
+}
+
+@keyframes visionFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+@media(max-width:768px){
+  .mission-vision-grid{
+    grid-template-columns:1fr;
+  }
+}
     :root{
       --bg:#ffffff;
       --panel:#ffffff;
@@ -555,37 +594,38 @@
 <p>Empowering investors with clarity, transparency and world-class tools for smarter financial decisions.</p>
 </header>
 <!-- CONTENT -->
+<!-- MISSION & VISION TOGETHER -->
 <section>
-<div class="wrap">
-<div class="mission-box reveal">
-<h2>Our Mission</h2>
-<p>We aim to empower investors with knowledge, transparency and technology that enables confident decision-making.</p>
-<p>Our purpose is to build long-term trust by offering reliable tools, research-driven insights and a fully secure investment environment.</p>
-<ul>
-<li>Deliver trusted, research-driven insights.</li>
-<li>Encourage responsible and informed investing.</li>
-<li>Promote transparency and investor protection.</li>
-<li>Support long-term value creation for all clients.</li>
-</ul>
-</div>
-</div>
-</section>
+  <div class="wrap">
+    <div class="mission-vision-grid reveal">
 
-<section class="section">
-  <div class="container">
-    <div class="panel" style="display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:center;">
-      <div style="grid-column:span 7;">
-        <h2>Our Vision</h2>
-        <p class="muted">
-          To be a trusted, client-first brokerage delivering professional execution, research-led insights,
-          and secure digital access—built on transparency, compliance, and long-term relationships.
-        </p>
+      <!-- Mission -->
+      <div class="mission-box">
+        <h2>Our Mission</h2>
+        <p>We aim to empower investors with knowledge, transparency and technology that enables confident decision-making.</p>
+        <p>Our purpose is to build long-term trust by offering reliable tools, research-driven insights and a fully secure investment environment.</p>
+        <ul>
+          <li>Deliver trusted, research-driven insights.</li>
+          <li>Encourage responsible and informed investing.</li>
+          <li>Promote transparency and investor protection.</li>
+          <li>Support long-term value creation for all clients.</li>
+        </ul>
       </div>
-      <div style="grid-column:span 5;">
-        <div class="card" style="padding:14px;">
-          <img src="assets/images/vision.svg" alt="Vision" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);"/>
+
+      <!-- Vision -->
+      <div class="mission-box vision-box">
+        <h2>Our Vision</h2>
+        <p>
+          To be a trusted, client-first brokerage delivering professional execution,
+          research-led insights, and secure digital access—built on transparency,
+          compliance, and long-term relationships.
+        </p>
+
+        <div class="vision-img-wrap">
+          <img src="assets/images/vision.svg" alt="Vision" class="vision-img"/>
         </div>
       </div>
+
     </div>
   </div>
 </section>
